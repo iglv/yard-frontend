@@ -2,7 +2,6 @@ html {
 	font-size: 62.5%;
 }
 body {
-	margin: 0;
 	background-image: url('../img/bg.png');
 	background-repeat: repeat;
 	font-size: 1.6rem;
@@ -27,7 +26,6 @@ body {
 	.nav__links {
 		float: right;
 		margin: 0;
-		padding: 0;
 		list-style: none;
 	}
 	.nav__links li {
