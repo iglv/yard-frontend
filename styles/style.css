@@ -10,6 +10,10 @@ body {
 
 /* main classes */
 
+.container {
+  width: 75rem
+}
+
 .btn {
   display: inline-block;
   padding: .75rem 2rem;
@@ -38,8 +42,8 @@ body {
   }
   /* links nav */
   .links {
-    padding-top: .25rem;
-    padding-bottom: .25rem;
+    padding-top: .4rem;
+    padding-bottom: .4rem;
   }
   .links__item {
     padding-left: 2rem;
