@@ -7,13 +7,23 @@ body {
   color: #3e4247;
   background-image: url('../img/bg.png');
   background-repeat: repeat;
+
+  text-rendering: optimizeLegibility !important;
+  -webkit-font-smoothing: antialiased;
+  -webkit-line-break: after-white-space;
 }
 
 /* main classes */
 
+
+.bg-white {
+  background: white;
+}
+
 .btn {
+  font-weight: 300;
   display: inline-block;
-  padding: .7rem 2rem;
+  padding: .75rem 2rem;
   text-decoration: none;
   color: white;
   border-radius: 2px;
@@ -35,7 +45,7 @@ body {
 .header__wrap {
   display: flex;
   justify-content: space-between;
-  /*margin-left: -.5rem;*/
+  margin-left: -.5rem;
   padding-top: .3rem;
 }
 /* links nav */
