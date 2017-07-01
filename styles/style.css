@@ -13,7 +13,7 @@ body {
 
 .btn {
   display: inline-block;
-  padding: .75rem 2rem;
+  padding: .7rem 2rem;
   text-decoration: none;
   color: white;
   border-radius: 2px;
@@ -35,7 +35,7 @@ body {
 .header__wrap {
   display: flex;
   justify-content: space-between;
-  margin-left: -.5rem;
+  /*margin-left: -.5rem;*/
   padding-top: .3rem;
 }
 /* links nav */
@@ -66,7 +66,7 @@ body {
 .headline {
   max-width: 50rem;
   margin: auto;
-  padding-top: 4rem;
+  padding-top: 4.2rem;
   padding-bottom: 4rem;
   text-align: center;
 }
@@ -74,7 +74,7 @@ body {
   font-size: 1.5rem;
   font-weight: bold;
   margin: 0;
-  padding-bottom: 1rem;
+  padding-bottom: .9rem;
   color: #3e4247;
 }
 .headline__description {
@@ -133,8 +133,8 @@ body {
 
 /* main footer */
 .footer {
-  font-size: .8rem;
-  padding: 2rem 0;
+  font-size: .9rem;
+  padding: 2.15rem 0;
   color: #a9afb6;
   background-color: #111;
 }
@@ -143,7 +143,8 @@ body {
   padding-bottom: .5rem;
 }
 .footer__heading--border {
-  padding-top: 1rem;
+  padding-top: 1.1rem;
+  padding-bottom: .1rem;
   border-top: 3px solid #3e4247;
 }
 .footer__text {
@@ -151,11 +152,16 @@ body {
   margin: 0;
   padding-top: 6rem;
 }
+.footer__info {
+  margin: 0;
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+}
 /*   nav */
 .footer__link {
   display: block;
-  padding-top: .5rem;
-  padding-bottom: .5rem;
+  padding-top: .9rem;
+  padding-bottom: 0rem;
   text-decoration: none;
   color: #fff;
 }
@@ -165,5 +171,5 @@ body {
   text-decoration: underline;
 }
 .footer__link--arrow {
-  padding-top: 1rem;
+  padding-top: 1.2rem;
 }
