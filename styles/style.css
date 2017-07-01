@@ -17,6 +17,7 @@ body {
 }
 
 .btn {
+  font-weight: 300;
   display: inline-block;
   padding: .75rem 2rem;
   text-decoration: none;
