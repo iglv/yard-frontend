@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import BodyClassName from 'react-body-classname';
 import './App.css';
 import ComplexInfo from './Complex/Info';
 import ComplexPhotos from './Complex/Photos';
@@ -13,17 +14,19 @@ import ComplexMap from './Complex/Map';
 class Complex extends Component {
   render() {
     return (
-      <div className="App">
-        <ComplexInfo />
-        <ComplexPhotos />
-        <ComplexAvailable />
-        <ComplexSpec />
-        <ComplexDesc />
-        <ComplexInfra />
-        <ComplexOffers />
-        <ComplexGuide />
-        <ComplexMap />
-      </div>
+      <BodyClassName className="bg-white">
+        <div className="App">
+          <ComplexInfo />
+          <ComplexPhotos />
+          <ComplexAvailable />
+          <ComplexSpec />
+          <ComplexDesc />
+          <ComplexInfra />
+          <ComplexOffers />
+          <ComplexGuide />
+          <ComplexMap />
+        </div>
+      </BodyClassName>
     );
   }
 }

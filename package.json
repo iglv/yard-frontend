@@ -1,9 +1,10 @@
 {
-  "name": "app",
-  "version": "0.1.0",
+  "name": "Complex Development Site",
+  "version": "0.0.1",
   "private": true,
   "dependencies": {
     "react": "^15.6.1",
+    "react-body-classname": "^1.2.0",
     "react-dom": "^15.6.1",
     "react-router": "^4.1.1",
     "react-router-dom": "^4.1.1"

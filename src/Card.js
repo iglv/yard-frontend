@@ -1,8 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 
 export default () => {
   return (
-    <a className="card" href="#">
+    <Link className="card" to="/сomplex">
       <div className="card__img">
         <img src="img/cards/bitmap.png" srcSet="img/cards/bitmap@2x.png 2x, img/cards/bitmap@3x.png 3x" />
       </div>
@@ -17,6 +18,6 @@ export default () => {
           The Lewis Steel Building is a masterful industrial conversion located in the heart of Williamsburg. Located at 76 North 4th Street, the former 1930's steel factory has been transformed into 83 individually unique and luxury loft apartments.
         </p>
       </div>
-    </a>
+    </Link>
   );
 };
