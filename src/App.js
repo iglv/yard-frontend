@@ -1,21 +1,22 @@
 import React, { Component } from 'react';
-import './App.css';
+import { BrowserRouter as Router, Route } from 'react-router-dom'
+import Complexes from './Complexes'
+import Complex from './Complex'
 import Header from './Header';
-import Hero from './Hero';
-import Headline from './Headline';
-import Cards from './Cards';
 import Footer from './Footer';
+
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <Header/>
-        <Hero/>
-        <Headline/>
-        <Cards/>
-        <Footer/>
-      </div>
+      <Router>
+        <div className="App">
+          <Header />
+          <Route exact path="/" component={Complexes} />
+          <Route exact path="/сomplex" component={Complex} />
+          <Footer />
+        </div>
+      </Router>
     );
   }
 }

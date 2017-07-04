@@ -1,13 +1,14 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 
 export default () => {
   return (
     <header className="header">
       <div className="container">
         <div className="header__wrap">
-          <a href="#"><img src="img/compass-logo.svg" alt="Logo" height={24} /></a>
+          <Link to="/"><img src="img/compass-logo.svg" alt="Logo" height={24} /></Link>
           <nav className="header__links links">
-            <a className="links__item" href="#">Купить</a>
+            <Link className="links__item" to="/complex">Купить</Link>
             <a className="links__item" href="#">Снять</a>
             <a className="links__item" href="#">Наши агенты</a>
           </nav>
