@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 
-import Complexes from './Complexes'
-import Complex from './Complex'
+import './App.css';
+import Complexes from './Complexes/Index'
+import Complex from './Complexes/View/Index'
 import Header from './Header';
 import Footer from './Footer';
 

@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import BodyClassName from 'react-body-classname';
-import './App.css';
-import ComplexInfo from './Complex/Info';
-import ComplexPhotos from './Complex/Photos';
-import ComplexAvailable from './Complex/Available';
-import ComplexSpec from './Complex/Spec';
-import ComplexDesc from './Complex/Desc';
-import ComplexInfra from './Complex/Infra';
-import ComplexOffers from './Complex/Offers';
-import ComplexGuide from './Complex/Guide';
-import ComplexMap from './Complex/Map';
+
+import ComplexInfo from './Info';
+import ComplexPhotos from './Photos';
+import ComplexAvailable from './Available';
+import ComplexSpec from './Spec';
+import ComplexDesc from './Desc';
+import ComplexInfra from './Infra';
+import ComplexOffers from './Offers';
+import ComplexGuide from './Guide';
+import ComplexMap from './Map';
 
 class Complex extends Component {
   render() {
