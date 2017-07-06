@@ -3,6 +3,7 @@ import { Grid, Row, Col } from 'react-flexbox-grid';
 
 class Desc extends Component {
   render() {
+    const children = React.Children.toArray(this.props.children)
     return (
       <Grid>
         <div className="complex-desc">
@@ -11,7 +12,7 @@ class Desc extends Component {
               <h2 className="complex-desc__title">Описание</h2>
             </Col>
             <Col xs={10}>
-              <div className="complex-desc__content">{this.props.text}</div>
+              <div className="complex-desc__content">{children.sort().join(' ')}</div>
             </Col>
           </Row>
         </div>

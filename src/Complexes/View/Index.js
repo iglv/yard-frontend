@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import BodyClassName from 'react-body-classname';
+import { Grid, Row, Col } from 'react-flexbox-grid';
 
 import Info from './Info';
 import Photos from './Photos';
@@ -7,22 +8,34 @@ import Available from './Available';
 import Special from './Special';
 import Desc from './Desc';
 import Infrastructure from './Infrastructure';
-import Offers from './Offers';
+import Offer from './Offer';
 import Guide from './Guide';
 import Maps from './Map';
 
+
 class Complex extends Component {
   render() {
+    const complexName = 'Жилой комплекс «Полянка/44»';
+
     return (
       <BodyClassName className="bg-white">
         <div>
-          <Info title="Жилой комплекс «Полянка/44»" address="Район Якиманка, улица Большая Полянка, дом 44 • 119180" />
-          <Photos />
+          <Info title={complexName} address="Район Якиманка, улица Большая Полянка, дом 44 • 119180" />
+          <Photos>{'bananas'}{'oranges'}{'apples'}</Photos>
           <Available sentences="950" architect="John McAslan + Partners" developer="Группа «ПСН»" />
           <Special />
-          <Desc text="<p>ВТБ Арена Парк — современный квартал в 10 минутах езды от Кремля. Территория разделена на три зоны: жилой район, центральный стадион «Динамо» и большой спортивный парк.</p><p>Жилой район — это 13 корпусов: апартаменты, штаб-квартира «Динамо», отель «Hyatt Regency Moscow» и четыре современных бизнес-центра. На территории — рестораны, спа-комплекс, фитнес-центр, химчистка, аптеки, магазины и отделения банков. В каждом корпусе работает консьерж и круглосуточная охрана. Для жителей оборудованы технические помещения под хранение колясок и велосипедов, комнаты для домашних животных и уютные вестибюли с мягкими креслами для встреч с друзьями и соседями.</p><p>Сердце ВТБ Арена Парк — стадион. Под одной крышей расположились музей, торгово-развлекательный комплекс, подземная парковка для гостей и две крупные спортивные арены. Жизнь квартала сосредоточена в этой зоне: здесь можно сходить на концерт или фестиваль, поболеть за любимую команду и купить новую рубашку в торговом комплексе.</p><p>Тихий жилой район от шумного стадиона отделяет Парк Физкультуры и Отдыха. Здесь каждый найдет занятие: для детей оборудованы игровые зоны, для подростков — спортивные площадки на открытом воздухе, для взрослых — велосипедные дорожки и зоны отдыха, где можно подышать свежим воздухом во время рабочего перерыва.</p>" />
+          <Desc></Desc>
           <Infrastructure />
-          <Offers />
+          <div className="complex-offers">
+            <Grid>
+              <h2 className="complex-offers__title">Предложения {complexName}</h2>
+              <Row>
+                <Col xs={4}><Offer room="1" /></Col>
+                <Col xs={4}><Offer room="2" /></Col>
+                <Col xs={4}><Offer room="3" /></Col>
+              </Row>
+            </Grid>
+          </div>
           <Guide />
           <Maps />
         </div>
