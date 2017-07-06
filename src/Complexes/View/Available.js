@@ -1,20 +1,24 @@
-import React from 'react';
+import React, {Component} from 'react';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 
-export default () => {
-  return (
-    <Grid>
-      <div className="compex-available">
-        <div className="compex-available__item">
-          <h2 className="compex-available__title">950 <small className="compex-available__subtitle">предложений</small></h2>
+class Available extends Component {
+  render() {
+    return (
+      <Grid>
+        <div className="compex-available">
+          <div className="compex-available__item">
+            <h2 className="compex-available__title">{this.props.sentences} <small className="compex-available__subtitle">предложений</small></h2>
+          </div>
+          <div className="compex-available__item">
+            <h2 className="compex-available__title">{this.props.architect} <small className="compex-available__subtitle">архитектор</small></h2>
+          </div>
+          <div className="compex-available__item">
+            <h2 className="compex-available__title">{this.props.developer} <small className="compex-available__subtitle">застройщик</small></h2>
+          </div>
         </div>
-        <div className="compex-available__item">
-          <h2 className="compex-available__title">John McAslan + Partners <small className="compex-available__subtitle">архитектор</small></h2>
-        </div>
-        <div className="compex-available__item">
-          <h2 className="compex-available__title">Группа «ПСН» <small className="compex-available__subtitle">застройщик</small></h2>
-        </div>
-      </div>
-    </Grid>
-  );
-};
+      </Grid>
+    );
+  }
+}
+
+export default Available;
