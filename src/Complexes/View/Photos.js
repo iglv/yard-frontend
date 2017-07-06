@@ -1,4 +1,5 @@
 import React from 'react';
+import { Grid, Row, Col } from 'react-flexbox-grid';
 
 export default () => {
   return (
@@ -10,9 +11,9 @@ export default () => {
         <img src="img/photos/4.jpg" alt="Photo" />
         <img src="img/photos/2.jpg" alt="Photo" />
       </div>
-      <div className="container">
+      <Grid>
         <a href="#" className="complex-photos__info">41 фотография</a>
-      </div>
+      </Grid>
     </div>
   );
 };

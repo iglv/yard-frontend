@@ -1,9 +1,10 @@
 import React, {Component} from 'react';
+import { Grid, Row, Col } from 'react-flexbox-grid';
 
 class Info extends Component {
   render() {
     return (
-      <div className="container">
+      <Grid>
         <div className="complex-info">
           <div className="complex-info__main">
             <h1 className="complex-info__title">
@@ -15,7 +16,7 @@ class Info extends Component {
           </div>
           <a href="#" className="complex-info__favorite">В избранное</a>
         </div>
-      </div>
+      </Grid>
     );
   }
 }
