@@ -20,20 +20,6 @@ body {
   background: white;
 }
 
-.btn {
-  font-weight: 300;
-  display: inline-block;
-  padding: .75rem 2rem;
-  text-decoration: none;
-  color: white;
-  border-radius: 2px;
-  background-color: #000;
-}
-.btn:hover,
-.btn:active,
-.btn:focus {
-  background-color: #414141;
-}
 
 /* main nav */
 .header {
@@ -64,41 +50,11 @@ body {
 .links__item:focus {
 }
 
-/* main hero */
-.hero {
-  padding-top: 5rem;
-  padding-bottom: 5rem;
-  text-align: center;
-  background: #161616;
-}
-
-/* main headline */
-.headline {
-  max-width: 50rem;
-  margin: auto;
-  padding-top: 4.2rem;
-  padding-bottom: 4rem;
-  text-align: center;
-}
-.headline__title {
-  font-size: 1.5rem;
-  font-weight: bold;
-  margin: 0;
-  padding-bottom: .9rem;
-  color: #3e4247;
-}
-.headline__description {
-  line-height: 1.5;
-  margin: 0;
-  padding-bottom: 1rem;
-  color: #3e4247;
-}
 
 /* main cards */
 .cards {
   padding-bottom: 3rem;
 }
-
 .card {
   display: flex;
   height: 21.8rem;
