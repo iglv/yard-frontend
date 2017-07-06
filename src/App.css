@@ -219,6 +219,11 @@ body {
 .complex-spec {
   padding-top: 2rem;
 }
+.complex-spec__wrap {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
 .complex-spec__title {
   font-family: 'Philosopher';
   font-size: 1.5rem;
@@ -226,12 +231,14 @@ body {
   padding-bottom: 1.2rem;
 }
 .complex-spec__name {
+  width: 50%;
   margin: 0;
   padding-bottom: .9rem;
   color: #a9afb6;
 }
 .complex-spec__data {
   font-weight: 500;
+  width: 50%;
   margin: 0;
   padding-bottom: .9rem;
 }
