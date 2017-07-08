@@ -7,7 +7,7 @@ import Info from './Info';
 import Photos from './Photos';
 import Available from './Available';
 import Special from './Special';
-import Desc from './Desc';
+import Description from './Description';
 import Infrastructure from './Infrastructure';
 import Offer from './Offer';
 import Guide from './Guide';
@@ -35,7 +35,7 @@ export default props =>
       <Photos></Photos>
       <Available sentences="950" architect="John McAslan + Partners" developer="Группа «ПСН»" />
       <Special />
-      <Desc></Desc>
+      <Description></Description>
       <Infrastructure />
       <Offers>
         <Grid>

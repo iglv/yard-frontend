@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { Link } from "react-router-dom";
 import { Grid, Row, Col } from 'react-flexbox-grid';
 
-const DescStyled = styled.div`
+const Wrapper = styled.div`
   padding-top: 2.3rem;
 `;
 
@@ -20,8 +20,8 @@ const Paragraph = styled.div`
 `;
 
 export default props =>
-  <Grid>
-    <DescStyled>
+  <Wrapper>
+    <Grid>
       <Row>
         <Col xs={2}>
           <Title>Описание</Title>
@@ -62,6 +62,6 @@ export default props =>
           </article>
         </Col>
       </Row>
-    </DescStyled>
-  </Grid>
+    </Grid>
+  </Wrapper>
 ;
