@@ -33,7 +33,7 @@ export default props =>
     <div>
       <Info title={complexName} address="Район Якиманка, улица Большая Полянка, дом 44 • 119180" />
       <Photos></Photos>
-      <Available sentences="950" architect="John McAslan + Partners" developer="Группа «ПСН»" />
+      <Summary sentences="950" architect="John McAslan + Partners" developer="Группа «ПСН»" />
       <Special />
       <Description></Description>
       <Infrastructure />
