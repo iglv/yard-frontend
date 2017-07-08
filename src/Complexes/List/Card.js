@@ -28,7 +28,7 @@ const Info = styled.div`
   padding-left: 2rem;
 `;
 
-const Subtitle = styled.div`
+const Location = styled.div`
   font-family: Menlo;
   padding-bottom: 1.5rem;
   text-transform: uppercase;
@@ -55,14 +55,14 @@ export default props =>
       <img src="img/cards/bitmap.png" srcSet="img/cards/bitmap@2x.png 2x, img/cards/bitmap@3x.png 3x" />
     </div>
     <Info>
-      <Subtitle>
+      <Location>
         {props.location}
       </Subtitle>
-      <Title>
+      <Location>
         {props.title}
       </Title>
       <Description>
-        {props.description}
+        {props.children}
       </Description>
     </Info>
   </Card>
