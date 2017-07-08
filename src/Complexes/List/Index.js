@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 
 import Hero from './Hero';
-import Headline from './List/Headline';
+import Headline from './Headline';
 import Card from './Card';
 
 class Complexes extends Component {

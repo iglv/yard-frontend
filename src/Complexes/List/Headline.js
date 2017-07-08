@@ -1,8 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from "react-router-dom";
 import { Grid, Row, Col } from 'react-flexbox-grid';
-
-import Btn from '../Btn';
 
 const Headline = styled.div`
   max-width: 50rem;
@@ -12,7 +11,7 @@ const Headline = styled.div`
   text-align: center;
 `;
 
-const HeadlineTitle = styled.h1`
+const Title = styled.h1`
   font-size: 1.5rem;
   font-weight: bold;
   margin: 0;
@@ -20,21 +19,36 @@ const HeadlineTitle = styled.h1`
   color: #3e4247;
 `;
 
-const HeadlineDescription = styled.p`
+const Description = styled.p`
   line-height: 1.5;
   margin: 0;
   padding-bottom: 1rem;
   color: #3e4247;
 `;
 
+const LinkStyled = styled(Link)`
+  font-weight: 300;
+  display: inline-block;
+  padding: .75rem 2rem;
+  text-decoration: none;
+  color: white;
+  border-radius: 2px;
+  background-color: #000;
+
+  &:hover,
+  &:active,
+  &:focus {
+    background-color: #414141;
+  }
+`;
 
 export default () => {
   return (
     <Grid>
       <Headline>
-        <HeadlineTitle>Discover Our New Developments</HeadlineTitle>
-        <HeadlineDescription>Compass brings a modern approach to new development marketing and sales. From boutique rental conversions to luxurious ground-up condominiums, browse our portfolio of current offerings.</HeadlineDescription>
-        <Btn href="/" title="Contact The Team"></Btn>
+        <Title>Discover Our New Developments</Title>
+        <Description>Compass brings a modern approach to new development marketing and sales. From boutique rental conversions to luxurious ground-up condominiums, browse our portfolio of current offerings.</Description>
+        <LinkStyled to="/">Contact The Team</LinkStyled>
       </Headline>
     </Grid>
   );

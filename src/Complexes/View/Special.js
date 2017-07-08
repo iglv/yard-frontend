@@ -1,63 +1,97 @@
 import React, {Component} from 'react';
+import styled from 'styled-components';
+import { Link } from "react-router-dom";
 import { Grid, Row, Col } from 'react-flexbox-grid';
 
-class Available extends Component {
+const SpecialStyled = styled.div`
+  padding-top: 2rem;
+`;
+
+const Title = styled.h2`
+  font-family: 'Philosopher';
+  font-size: 1.5rem;
+  margin: 0;
+  padding-bottom: 1.2rem;
+`;
+
+const Wrap = styled.dl`
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+`;
+
+const Name = styled.dt`
+  width: 50%;
+  margin: 0;
+  padding-bottom: .9rem;
+  color: #a9afb6;
+`;
+
+const Data = styled.dd`
+  font-weight: 500;
+  width: 50%;
+  margin: 0;
+  padding-bottom: .9rem;
+`;
+
+
+class Special extends Component {
   render() {
     return (
       <Grid>
-        <div className="complex-spec">
-          <h2 className="complex-spec__title">Характеристики</h2>
+        <SpecialStyled>
+          <Title>Характеристики</Title>
           <Row>
             <Col xs={4}>
-              <dl className="complex-spec__wrap">
-                <dt className="complex-spec__name">Количество квартир</dt>
-                <dd className="complex-spec__data">1 503</dd>
+              <Wrap>
+                <Name>Количество квартир</Name>
+                <Data>1 503</Data>
 
-                <dt className="complex-spec__name">Статус</dt>
-                <dd className="complex-spec__data">Квартиры</dd>
+                <Name>Статус</Name>
+                <Data>Квартиры</Data>
 
-                <dt className="complex-spec__name">Цены</dt>
-                <dd className="complex-spec__data">от 5.3 до 143.5 млн</dd>
+                <Name>Цены</Name>
+                <Data>от 5.3 до 143.5 млн</Data>
 
-                <dt className="complex-spec__name">Безопасность</dt>
-                <dd className="complex-spec__data">Охраняемая территория</dd>
-              </dl>
+                <Name>Безопасность</Name>
+                <Data>Охраняемая территория</Data>
+              </Wrap>
             </Col>
             <Col xs={4}>
-              <dl className="complex-spec__wrap">
-                <dt className="complex-spec__name">Конструкция корпусов</dt>
-                <dd className="complex-spec__data">монолит</dd>
+              <Wrap>
+                <Name>Конструкция корпусов</Name>
+                <Data>монолит</Data>
 
-                <dt className="complex-spec__name">Площадь</dt>
-                <dd className="complex-spec__data">от 50 до 154 м²</dd>
+                <Name>Площадь</Name>
+                <Data>от 50 до 154 м²</Data>
 
-                <dt className="complex-spec__name">Высота потолков</dt>
-                <dd className="complex-spec__data">3.45 − 5 м</dd>
+                <Name>Высота потолков</Name>
+                <Data>3.45 − 5 м</Data>
 
-                <dt className="complex-spec__name">Обслуживание</dt>
-                <dd className="complex-spec__data">1 200 руб / м² / месяц</dd>
-              </dl>
+                <Name>Обслуживание</Name>
+                <Data>1 200 руб / м² / месяц</Data>
+              </Wrap>
             </Col>
             <Col xs={4}>
-              <dl className="complex-spec__wrap">
-                <dt className="complex-spec__name">Начало строительства</dt>
-                <dd className="complex-spec__data">I квартал 2012 года</dd>
+              <Wrap>
+                <Name>Начало строительства</Name>
+                <Data>I квартал 2012 года</Data>
 
-                <dt className="complex-spec__name">Конец строительства</dt>
-                <dd className="complex-spec__data">IV квартал 2018 года</dd>
+                <Name>Конец строительства</Name>
+                <Data>IV квартал 2018 года</Data>
 
-                <dt className="complex-spec__name">Наземная парковка</dt>
-                <dd className="complex-spec__data">1 500 м/м</dd>
+                <Name>Наземная парковка</Name>
+                <Data>1 500 м/м</Data>
 
-                <dt className="complex-spec__name">Подземная парковка</dt>
-                <dd className="complex-spec__data">Нет</dd>
-              </dl>
+                <Name>Подземная парковка</Name>
+                <Data>Нет</Data>
+              </Wrap>
             </Col>
           </Row>
-        </div>
+        </SpecialStyled>
       </Grid>
     );
   }
 }
 
-export default Available;
+export default Special;

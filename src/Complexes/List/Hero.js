@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Grid, Row, Col } from 'react-flexbox-grid';
 
 const Hero = styled.div`
   padding-top: 5rem;
@@ -11,9 +12,9 @@ const Hero = styled.div`
 export default () => {
   return (
     <Hero>
-      <div className="container">
+      <Grid>
         <img src="img/compass-development-logo.svg" alt="Development" />
-      </div>
+      </Grid>
     </Hero>
   );
 };

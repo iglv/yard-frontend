@@ -1,21 +1,51 @@
 import React, {Component} from 'react';
+import styled from 'styled-components';
+import { Link } from "react-router-dom";
 import { Grid, Row, Col } from 'react-flexbox-grid';
+
+const AvailableStyled = styled.div`
+  display: flex;
+  justify-content: flex-start;
+  padding-top: 1.5rem;
+  padding-bottom: 1.8rem;
+  border-bottom: solid 1px #e0e0e1;
+`;
+
+const Item = styled.div`
+  padding-right: 3rem;
+`;
+
+const Title = styled.h2`
+  font-family: 'Philosopher';
+  font-size: 1.5rem;
+  margin: 0;
+`;
+
+const Subtitle = styled.small`
+  font-family: 'Fira Sans';
+  font-size: .875rem;
+  font-weight: 300;
+  display: block;
+  padding-top: .75rem;
+  color: #a9afb6;
+`;
+
 
 class Available extends Component {
   render() {
     return (
       <Grid>
-        <div className="compex-available">
-          <div className="compex-available__item">
-            <h2 className="compex-available__title">{this.props.sentences} <small className="compex-available__subtitle">предложений</small></h2>
-          </div>
-          <div className="compex-available__item">
-            <h2 className="compex-available__title">{this.props.architect} <small className="compex-available__subtitle">архитектор</small></h2>
-          </div>
-          <div className="compex-available__item">
-            <h2 className="compex-available__title">{this.props.developer} <small className="compex-available__subtitle">застройщик</small></h2>
-          </div>
-        </div>
+        <AvailableStyled>
+          <Item>
+            <Title>{this.props.sentences} <Subtitle>предложений</Subtitle></Title>
+          </Item>
+          <Item>
+            <Title>{this.props.architect} <Subtitle>архитектор</Subtitle></Title>
+          </Item>
+          <Item>
+            <Title>{this.props.developer} <Subtitle>застройщик</Subtitle></Title>
+          </Item>
+        </AvailableStyled>
       </Grid>
     );
   }

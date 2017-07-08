@@ -1,11 +1,26 @@
-import React from 'react';
+import React, {Component} from 'react';
+import styled from 'styled-components';
+import { Link } from "react-router-dom";
 import { Grid, Row, Col } from 'react-flexbox-grid';
+
+const InfraStyled = styled.div`
+  padding-top: 2rem;
+  padding-bottom: 3rem;
+  border-top: solid 1px #e0e0e1;
+`;
+
+const Title = styled.h2`
+  font-family: 'Philosopher';
+  font-size: 1.5rem;
+  margin: 0;
+`;
+
 
 export default () => {
   return (
     <Grid>
-      <div className="complex-infra">
-        <h2 className="complex-infra__title">Инфраструктура</h2>
+      <InfraStyled>
+        <Title>Инфраструктура</Title>
         <Row>
           <Col xs={2}>
             <p>Бассейн</p>
@@ -29,7 +44,7 @@ export default () => {
             <p>Частная школа</p>
           </Col>
         </Row>
-      </div>
+      </InfraStyled>
     </Grid>
   );
 };
