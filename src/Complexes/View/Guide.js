@@ -9,7 +9,7 @@ const Guide = styled.div`
   background-color: #3e4247;
 `;
 
-const Subtitle = styled.div`
+const Locate = styled.div`
   font-family: 'Philosopher';
   font-size: 1.55rem;
   margin: 0;
@@ -41,7 +41,7 @@ export default props =>
     <Grid>
       <Row>
         <Col xs={6}>
-          <Subtitle>{props.subtitle}</Subtitle>
+          <Locate>{props.locate}</Locate>
           <Title>{props.title}</Title>
           <LinkGuide to="/">{props.link}</LinkGuide>
         </Col>
