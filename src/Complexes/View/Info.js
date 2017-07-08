@@ -38,24 +38,18 @@ const LinkFavorite = styled(Link)`
 `;
 
 
-class Info extends Component {
-  render() {
-    return (
-      <Grid>
-        <InfoBox>
-          <div>
-            <Title>
-              {this.props.title}
-            </Title>
-            <Desc>
-              {this.props.address}
-            </Desc>
-          </div>
-          <LinkFavorite to="/">В избранное</LinkFavorite>
-        </InfoBox>
-      </Grid>
-    );
-  }
-}
-
-export default Info;
+export default props =>
+  <Grid>
+    <InfoBox>
+      <div>
+        <Title>
+          {props.title}
+        </Title>
+        <Desc>
+          {props.address}
+        </Desc>
+      </div>
+      <LinkFavorite to="/">В избранное</LinkFavorite>
+    </InfoBox>
+  </Grid>
+;

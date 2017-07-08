@@ -49,27 +49,21 @@ const Description = styled.p`
   margin: 0;
 `;
 
-class Card extends Component {
-  render() {
-    return (
-      <CardStyled to="/сomplex">
-        <div>
-          <img src="img/cards/bitmap.png" srcSet="img/cards/bitmap@2x.png 2x, img/cards/bitmap@3x.png 3x" />
-        </div>
-        <Info>
-          <Subtitle>
-            {this.props.location}
-          </Subtitle>
-          <Title>
-            {this.props.title}
-          </Title>
-          <Description>
-            {this.props.description}
-          </Description>
-        </Info>
-      </CardStyled>
-    );
-  }
-}
-
-export default Card;
+export default props =>
+  <CardStyled to="/сomplex">
+    <div>
+      <img src="img/cards/bitmap.png" srcSet="img/cards/bitmap@2x.png 2x, img/cards/bitmap@3x.png 3x" />
+    </div>
+    <Info>
+      <Subtitle>
+        {props.location}
+      </Subtitle>
+      <Title>
+        {props.title}
+      </Title>
+      <Description>
+        {props.description}
+      </Description>
+    </Info>
+  </CardStyled>
+;

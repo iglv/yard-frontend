@@ -67,23 +67,17 @@ const locationList = [
   }
 ];
 
-class Map extends Component {
-  render() {
-    return (
-      <Grid>
-        <MapStyled>
-          <Row>
-            <Col xs={6}>
-              <MapImg src="/img/map@2x.png" />
-            </Col>
-            <Col xs={6}>
-              <Locations list={locationList} />
-            </Col>
-          </Row>
-        </MapStyled>
-      </Grid>
-    );
-  }
-}
-
-export default Map;
+export default props =>
+  <Grid>
+    <MapStyled>
+      <Row>
+        <Col xs={6}>
+          <MapImg src="/img/map@2x.png" />
+        </Col>
+        <Col xs={6}>
+          <Locations list={locationList} />
+        </Col>
+      </Row>
+    </MapStyled>
+  </Grid>
+;

@@ -62,17 +62,11 @@ const photoList = [
 
 const total = photoList.length;
 
-class PhotoGallery extends Component {
-  render() {
-    return (
-      <div>
-        <PhotosShow photos={photoList} />
-        <Grid>
-          <LinkTotal to="/">{total} фотография</LinkTotal>
-        </Grid>
-      </div>
-    );
-  }
-}
-
-export default PhotoGallery;
+export default props =>
+  <div>
+    <PhotosShow photos={photoList} />
+    <Grid>
+      <LinkTotal to="/">{total} фотография</LinkTotal>
+    </Grid>
+  </div>
+;

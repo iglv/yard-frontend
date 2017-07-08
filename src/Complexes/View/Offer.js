@@ -49,25 +49,19 @@ const Btn = styled.div`
 `;
 
 
-class Offer extends Component {
-  render() {
-    return (
-      <OfferStyled>
-        <Title>{this.props.room}-комнатные квартиры</Title>
-        <Info>
-          <Name>Площадь</Name>
-          от 59 до 120 м²
-        </Info>
-        <Info>
-          <Name>Стоимость</Name>
-          от 20.3 до 84.2 млн руб
-        </Info>
-        <Btn>
-          <LinkStyled to="/">Посмотреть предложения</LinkStyled>
-        </Btn>
-      </OfferStyled>
-    );
-  }
-}
-
-export default Offer;
+export default props =>
+  <OfferStyled>
+    <Title>{props.room}-комнатные квартиры</Title>
+    <Info>
+      <Name>Площадь</Name>
+      от 59 до 120 м²
+    </Info>
+    <Info>
+      <Name>Стоимость</Name>
+      от 20.3 до 84.2 млн руб
+    </Info>
+    <Btn>
+      <LinkStyled to="/">Посмотреть предложения</LinkStyled>
+    </Btn>
+  </OfferStyled>
+;

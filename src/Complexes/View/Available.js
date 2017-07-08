@@ -31,24 +31,18 @@ const Subtitle = styled.small`
 `;
 
 
-class Available extends Component {
-  render() {
-    return (
-      <Grid>
-        <AvailableStyled>
-          <Item>
-            <Title>{this.props.sentences} <Subtitle>предложений</Subtitle></Title>
-          </Item>
-          <Item>
-            <Title>{this.props.architect} <Subtitle>архитектор</Subtitle></Title>
-          </Item>
-          <Item>
-            <Title>{this.props.developer} <Subtitle>застройщик</Subtitle></Title>
-          </Item>
-        </AvailableStyled>
-      </Grid>
-    );
-  }
-}
-
-export default Available;
+export default props =>
+  <Grid>
+    <AvailableStyled>
+      <Item>
+        <Title>{props.sentences} <Subtitle>предложений</Subtitle></Title>
+      </Item>
+      <Item>
+        <Title>{props.architect} <Subtitle>архитектор</Subtitle></Title>
+      </Item>
+      <Item>
+        <Title>{props.developer} <Subtitle>застройщик</Subtitle></Title>
+      </Item>
+    </AvailableStyled>
+  </Grid>
+;

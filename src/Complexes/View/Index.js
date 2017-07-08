@@ -26,35 +26,29 @@ const StyledH2 = styled.div`
   padding-bottom: 1.5rem;
 `;
 
+const complexName = 'Жилой комплекс «Полянка/44»';
 
-class Complex extends Component {
-  render() {
-    const complexName = 'Жилой комплекс «Полянка/44»';
-
-    return (
-      <BodyClassName className="bg-white">
-        <div>
-          <Info title={complexName} address="Район Якиманка, улица Большая Полянка, дом 44 • 119180" />
-          <Photos></Photos>
-          <Available sentences="950" architect="John McAslan + Partners" developer="Группа «ПСН»" />
-          <Special />
-          <Desc></Desc>
-          <Infrastructure />
-          <OffersStyled>
-            <Grid>
-              <StyledH2>Предложения {complexName}</StyledH2>
-              <Row>
-                <Col xs={4}><Offer room="1" /></Col>
-                <Col xs={4}><Offer room="2" /></Col>
-                <Col xs={4}><Offer room="3" /></Col>
-              </Row>
-            </Grid>
-          </OffersStyled>
-          <Guide />
-          <Maps />
-        </div>
-      </BodyClassName>
-    );
-  }
-}
-export default Complex;
+export default props =>
+  <BodyClassName className="bg-white">
+    <div>
+      <Info title={complexName} address="Район Якиманка, улица Большая Полянка, дом 44 • 119180" />
+      <Photos></Photos>
+      <Available sentences="950" architect="John McAslan + Partners" developer="Группа «ПСН»" />
+      <Special />
+      <Desc></Desc>
+      <Infrastructure />
+      <OffersStyled>
+        <Grid>
+          <StyledH2>Предложения {complexName}</StyledH2>
+          <Row>
+            <Col xs={4}><Offer room="1" /></Col>
+            <Col xs={4}><Offer room="2" /></Col>
+            <Col xs={4}><Offer room="3" /></Col>
+          </Row>
+        </Grid>
+      </OffersStyled>
+      <Guide />
+      <Maps />
+    </div>
+  </BodyClassName>
+;

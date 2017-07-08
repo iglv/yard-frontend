@@ -44,8 +44,7 @@ export default () => {
             <Url to="/">Гид по Якиманке →</Url>
           </Col>
           <Col xs={6}>
-            <img className="complex-guide__photo" src="img/polyanka-photo.png" srcSet="img/polyanka-photo@3x.png 2x,
-      img/polyanka-photo@3x.png 3x" height={560} />
+            <img src="img/polyanka-photo.png" srcSet="img/polyanka-photo@3x.png 2x,  img/polyanka-photo@3x.png 3x" height={560} />
           </Col>
         </Row>
       </Grid>
