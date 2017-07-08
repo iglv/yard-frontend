@@ -57,8 +57,8 @@ export default props =>
     <Info>
       <Location>
         {props.location}
-      </Subtitle>
-      <Location>
+      </Location>
+      <Title>
         {props.title}
       </Title>
       <Description>
