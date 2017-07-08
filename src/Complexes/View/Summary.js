@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { Link } from "react-router-dom";
 import { Grid, Row, Col } from 'react-flexbox-grid';
 
-const AvailableStyled = styled.div`
+const Summary = styled.div`
   display: flex;
   justify-content: flex-start;
   padding-top: 1.5rem;
@@ -11,7 +11,7 @@ const AvailableStyled = styled.div`
   border-bottom: solid 1px #e0e0e1;
 `;
 
-const Item = styled.div`
+const Property = styled.div`
   padding-right: 3rem;
 `;
 
@@ -33,16 +33,16 @@ const Subtitle = styled.small`
 
 export default props =>
   <Grid>
-    <AvailableStyled>
-      <Item>
+    <Summary>
+      <Property>
         <Title>{props.sentences} <Subtitle>предложений</Subtitle></Title>
-      </Item>
-      <Item>
+      </Property>
+      <Property>
         <Title>{props.architect} <Subtitle>архитектор</Subtitle></Title>
-      </Item>
-      <Item>
+      </Property>
+      <Property>
         <Title>{props.developer} <Subtitle>застройщик</Subtitle></Title>
-      </Item>
-    </AvailableStyled>
+      </Property>
+    </Summary>
   </Grid>
 ;

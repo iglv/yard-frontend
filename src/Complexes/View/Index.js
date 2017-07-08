@@ -5,7 +5,7 @@ import { Grid, Row, Col } from 'react-flexbox-grid';
 
 import Info from './Info';
 import Photos from './Photos';
-import Available from './Available';
+import Summary from './Summary';
 import Special from './Special';
 import Description from './Description';
 import Infrastructure from './Infrastructure';
