@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import styled from 'styled-components';
 import { Link } from "react-router-dom";
 import { Grid, Row, Col } from 'react-flexbox-grid';
+import Image from "../Image";
 
 const Guide = styled.div`
   padding: 4rem 0 14rem;
@@ -26,28 +27,33 @@ const Title = styled.h2`
   color: #fff;
 `;
 
-const Url = styled(Link)`
+const LinkGuide = styled(Link)`
   text-decoration: none;
   color: #00779a;
 `;
 
+const ImageGuide = styled(Image)`
+  height: 560px;
+`;
 
-
-export default () => {
-  return (
-    <Guide>
-      <Grid>
-        <Row>
-          <Col xs={6}>
-            <Subtitle>Якиманка</Subtitle>
-            <Title>Исторический центр Москвы в двух километрах&nbsp;от Кремля</Title>
-            <Url to="/">Гид по Якиманке →</Url>
-          </Col>
-          <Col xs={6}>
-            <img src="img/polyanka-photo.png" srcSet="img/polyanka-photo@3x.png 2x,  img/polyanka-photo@3x.png 3x" height={560} />
-          </Col>
-        </Row>
-      </Grid>
-    </Guide>
-  );
-};
+export default props =>
+  <Guide>
+    <Grid>
+      <Row>
+        <Col xs={6}>
+          <Subtitle>{props.subtitle}</Subtitle>
+          <Title>{props.title}</Title>
+          <LinkGuide to="/">{props.link}</LinkGuide>
+        </Col>
+        <Col xs={6}>
+          <ImageGuide
+            src={props.map}
+            x2={props.map}
+            x3={props.map}
+            alt={props.title}
+          />
+        </Col>
+      </Row>
+    </Grid>
+  </Guide>
+;

@@ -41,14 +41,14 @@ export default props =>
         <Grid>
           <StyledH2>Предложения {complexName}</StyledH2>
           <Row>
-            <Col xs={4}><Offer room="1" /></Col>
-            <Col xs={4}><Offer room="2" /></Col>
-            <Col xs={4}><Offer room="3" /></Col>
+            <Col xs={4}><Offer room={1} space={{ min: 59, max: 120 }} price={{ min: 20.3, max: 84.2 }} /></Col>
+            <Col xs={4}><Offer room={2} space={{ min: 59, max: 120 }} price={{ min: 20.3, max: 84.2 }} /></Col>
+            <Col xs={4}><Offer room={3} space={{ min: 59, max: 120 }} price={{ min: 20.3, max: 84.2 }} /></Col>
           </Row>
         </Grid>
       </Offers>
-      <Guide />
-      <Maps />
+      <Guide subtitle="Якиманка" title="Исторический центр Москвы в двух километрах&nbsp;от Кремля" link="Гид по Якиманке →" map="polyanka-photo.png" />
+      <Maps map="map.png" />
     </div>
   </BodyClassName>
 ;

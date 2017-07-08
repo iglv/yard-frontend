@@ -54,11 +54,11 @@ export default props =>
     <Title>{props.room}-комнатные квартиры</Title>
     <Info>
       <Name>Площадь</Name>
-      от 59 до 120 м²
+      от {props.space.min} до {props.space.max} м²
     </Info>
     <Info>
       <Name>Стоимость</Name>
-      от 20.3 до 84.2 млн руб
+      от {props.price.min} до {props.price.max} млн руб
     </Info>
     <Btn>
       <LinkStyled to="/">Посмотреть предложения</LinkStyled>
