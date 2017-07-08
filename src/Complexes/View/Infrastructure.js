@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { Link } from "react-router-dom";
 import { Grid, Row, Col } from 'react-flexbox-grid';
 
-const InfraStyled = styled.div`
+const Infrastructure = styled.div`
   padding-top: 2rem;
   padding-bottom: 3rem;
   border-top: solid 1px #e0e0e1;
@@ -19,7 +19,7 @@ const Title = styled.h2`
 export default () => {
   return (
     <Grid>
-      <InfraStyled>
+      <Infrastructure>
         <Title>Инфраструктура</Title>
         <Row>
           <Col xs={2}>
@@ -44,7 +44,7 @@ export default () => {
             <p>Частная школа</p>
           </Col>
         </Row>
-      </InfraStyled>
+      </Infrastructure>
     </Grid>
   );
 };

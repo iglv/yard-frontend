@@ -19,7 +19,7 @@ const LinkStyled = styled(Link)`
   }
 `;
 
-const OfferStyled = styled.div`
+const Offer = styled.div`
   padding: 1.5rem 2rem;
   text-align: left;
   background: #fff;
@@ -50,7 +50,7 @@ const Btn = styled.div`
 
 
 export default props =>
-  <OfferStyled>
+  <Offer>
     <Title>{props.room}-комнатные квартиры</Title>
     <Info>
       <Name>Площадь</Name>
@@ -63,5 +63,5 @@ export default props =>
     <Btn>
       <LinkStyled to="/">Посмотреть предложения</LinkStyled>
     </Btn>
-  </OfferStyled>
+  </Offer>
 ;

@@ -14,7 +14,7 @@ import Guide from './Guide';
 import Maps from './Map';
 
 
-const OffersStyled = styled.div`
+const Offers = styled.div`
   padding: 4rem 0;
        text-align: center;
   background-color: #f4f5f9;
@@ -37,7 +37,7 @@ export default props =>
       <Special />
       <Desc></Desc>
       <Infrastructure />
-      <OffersStyled>
+      <Offers>
         <Grid>
           <StyledH2>Предложения {complexName}</StyledH2>
           <Row>
@@ -46,7 +46,7 @@ export default props =>
             <Col xs={4}><Offer room="3" /></Col>
           </Row>
         </Grid>
-      </OffersStyled>
+      </Offers>
       <Guide />
       <Maps />
     </div>

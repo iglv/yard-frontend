@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { Link } from "react-router-dom";
 import { Grid, Row, Col } from 'react-flexbox-grid';
 
-const InfoBox = styled.div`
+const Info = styled.div`
   display: flex;
   justify-content: space-between;
   padding-top: 1.5rem;
@@ -40,7 +40,7 @@ const LinkFavorite = styled(Link)`
 
 export default props =>
   <Grid>
-    <InfoBox>
+    <Info>
       <div>
         <Title>
           {props.title}
@@ -50,6 +50,6 @@ export default props =>
         </Desc>
       </div>
       <LinkFavorite to="/">В избранное</LinkFavorite>
-    </InfoBox>
+    </Info>
   </Grid>
 ;

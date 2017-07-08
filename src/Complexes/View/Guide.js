@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { Link } from "react-router-dom";
 import { Grid, Row, Col } from 'react-flexbox-grid';
 
-const GuideStyled = styled.div`
+const Guide = styled.div`
   padding: 4rem 0 14rem;
   background-color: #3e4247;
 `;
@@ -35,7 +35,7 @@ const Url = styled(Link)`
 
 export default () => {
   return (
-    <GuideStyled>
+    <Guide>
       <Grid>
         <Row>
           <Col xs={6}>
@@ -48,6 +48,6 @@ export default () => {
           </Col>
         </Row>
       </Grid>
-    </GuideStyled>
+    </Guide>
   );
 };

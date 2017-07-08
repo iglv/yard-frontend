@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { Link } from "react-router-dom";
 import { Grid, Row, Col } from 'react-flexbox-grid';
 
-const SpecialStyled = styled.div`
+const Special = styled.div`
   padding-top: 2rem;
 `;
 
@@ -37,7 +37,7 @@ const Data = styled.dd`
 
 export default props =>
   <Grid>
-    <SpecialStyled>
+    <Special>
       <Title>Характеристики</Title>
       <Row>
         <Col xs={4}>
@@ -86,6 +86,6 @@ export default props =>
           </Wrap>
         </Col>
       </Row>
-    </SpecialStyled>
+    </Special>
   </Grid>
 ;
