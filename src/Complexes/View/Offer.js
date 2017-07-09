@@ -1,7 +1,7 @@
-import React, {Component} from 'react';
-import styled from 'styled-components';
+import React, { Component } from "react";
+import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { Grid, Row, Col } from 'react-flexbox-grid';
+import { Grid, Row, Col } from "react-flexbox-grid";
 
 const LinkStyled = styled(Link)`
   font-weight: 300;
@@ -48,10 +48,11 @@ const Btn = styled.div`
   text-align: center;
 `;
 
-
 export default props =>
   <Offer>
-    <Title>{props.room}-комнатные квартиры</Title>
+    <Title>
+      {props.room}-комнатные квартиры
+    </Title>
     <Info>
       <Name>Площадь</Name>
       от {props.space.min} до {props.space.max} м²
@@ -63,5 +64,4 @@ export default props =>
     <Btn>
       <LinkStyled to="/">Посмотреть предложения</LinkStyled>
     </Btn>
-  </Offer>
-;
+  </Offer>;

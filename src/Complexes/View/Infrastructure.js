@@ -1,7 +1,7 @@
-import React, {Component} from 'react';
-import styled from 'styled-components';
+import React, { Component } from "react";
+import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { Grid, Row, Col } from 'react-flexbox-grid';
+import { Grid, Row, Col } from "react-flexbox-grid";
 
 const Infrastructure = styled.div`
   padding-top: 2rem;
@@ -14,7 +14,6 @@ const Title = styled.h2`
   font-size: 1.5rem;
   margin: 0;
 `;
-
 
 export default () => {
   return (

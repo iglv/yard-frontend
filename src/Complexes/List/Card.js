@@ -1,7 +1,7 @@
-import React, {Component} from 'react';
-import styled from 'styled-components';
+import React, { Component } from "react";
+import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { Grid, Row, Col } from 'react-flexbox-grid';
+import { Grid, Row, Col } from "react-flexbox-grid";
 
 const Card = styled(Link)`
   display: flex;
@@ -28,14 +28,14 @@ const Info = styled.div`
   padding-left: 2rem;
 `;
 
-const Location = styled.div`
+const Location = styled.p`
   font-family: Menlo;
   padding-bottom: 1.5rem;
   text-transform: uppercase;
   color: #646971;
 `;
 
-const Title = styled.h1`
+const Title = styled.h3`
   font-size: 2.5rem;
   font-weight: bold;
   line-height: 1.4;
@@ -52,7 +52,10 @@ const Description = styled.p`
 export default props =>
   <Card to="/сomplex">
     <div>
-      <img src="img/cards/bitmap.png" srcSet="img/cards/bitmap@2x.png 2x, img/cards/bitmap@3x.png 3x" />
+      <img
+        src="img/cards/bitmap.png"
+        srcSet="img/cards/bitmap@2x.png 2x, img/cards/bitmap@3x.png 3x"
+      />
     </div>
     <Info>
       <Location>
@@ -65,5 +68,4 @@ export default props =>
         {props.children}
       </Description>
     </Info>
-  </Card>
-;
+  </Card>;

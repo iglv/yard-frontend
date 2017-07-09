@@ -1,7 +1,7 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { Grid, Row, Col } from 'react-flexbox-grid';
+import { Grid, Row, Col } from "react-flexbox-grid";
 
 const Headline = styled.div`
   max-width: 50rem;
@@ -47,11 +47,13 @@ export default () => {
     <Grid>
       <Headline>
         <Title>Discover Our New Developments</Title>
-        <Description>Compass brings a modern approach to new development marketing and sales. From boutique rental conversions to luxurious ground-up condominiums, browse our portfolio of current offerings.</Description>
+        <Description>
+          Compass brings a modern approach to new development marketing and
+          sales. From boutique rental conversions to luxurious ground-up
+          condominiums, browse our portfolio of current offerings.
+        </Description>
         <LinkStyled to="/">Contact The Team</LinkStyled>
       </Headline>
     </Grid>
   );
 };
-
-

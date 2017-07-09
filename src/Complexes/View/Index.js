@@ -1,18 +1,17 @@
-import React, {Component} from 'react';
-import BodyClassName from 'react-body-classname';
-import styled from 'styled-components';
-import { Grid, Row, Col } from 'react-flexbox-grid';
+import React, { Component } from "react";
+import BodyClassName from "react-body-classname";
+import styled from "styled-components";
+import { Grid, Row, Col } from "react-flexbox-grid";
 
-import Info from './Info';
-import Photos from './Photos';
-import Summary from './Summary';
-import Special from './Special';
-import Description from './Description';
-import Infrastructure from './Infrastructure';
-import Offer from './Offer';
-import Guide from './Guide';
-import Maps from './Map';
-
+import Info from "./Info";
+import Photos from "./Photos";
+import Summary from "./Summary";
+import Special from "./Special";
+import Description from "./Description";
+import Infrastructure from "./Infrastructure";
+import Offer from "./Offer";
+import Guide from "./Guide";
+import Maps from "./Map";
 
 const Offers = styled.div`
   padding: 4rem 0;
@@ -26,29 +25,60 @@ const Title = styled.h2`
   padding-bottom: 1.5rem;
 `;
 
-const complexName = 'Жилой комплекс «Полянка/44»';
+const complexName = "Жилой комплекс «Полянка/44»";
 
 export default props =>
   <BodyClassName className="bg-white">
     <div>
-      <Info title={complexName} address="Район Якиманка, улица Большая Полянка, дом 44 • 119180" />
-      <Photos></Photos>
-      <Summary sentences="950" architect="John McAslan + Partners" developer="Группа «ПСН»" />
+      <Info
+        title={complexName}
+        address="Район Якиманка, улица Большая Полянка, дом 44 • 119180"
+      />
+      <Photos />
+      <Summary
+        sentences="950"
+        architect="John McAslan + Partners"
+        developer="Группа «ПСН»"
+      />
       <Special />
-      <Description></Description>
+      <Description />
       <Infrastructure />
       <Offers>
         <Grid>
-          <Title>Предложения {complexName}</Title>
+          <Title>
+            Предложения {complexName}
+          </Title>
           <Row>
-            <Col xs={4}><Offer room={1} space={{ min: 59, max: 120 }} price={{ min: 20.3, max: 84.2 }} /></Col>
-            <Col xs={4}><Offer room={2} space={{ min: 59, max: 120 }} price={{ min: 20.3, max: 84.2 }} /></Col>
-            <Col xs={4}><Offer room={3} space={{ min: 59, max: 120 }} price={{ min: 20.3, max: 84.2 }} /></Col>
+            <Col xs={4}>
+              <Offer
+                room={1}
+                space={{ min: 59, max: 120 }}
+                price={{ min: 20.3, max: 84.2 }}
+              />
+            </Col>
+            <Col xs={4}>
+              <Offer
+                room={2}
+                space={{ min: 59, max: 120 }}
+                price={{ min: 20.3, max: 84.2 }}
+              />
+            </Col>
+            <Col xs={4}>
+              <Offer
+                room={3}
+                space={{ min: 59, max: 120 }}
+                price={{ min: 20.3, max: 84.2 }}
+              />
+            </Col>
           </Row>
         </Grid>
       </Offers>
-      <Guide locate="Якиманка" title="Исторический центр Москвы в двух километрах&nbsp;от Кремля" link="Гид по Якиманке →" map="polyanka-photo.png" />
+      <Guide
+        locate="Якиманка"
+        title="Исторический центр Москвы в двух километрах&nbsp;от Кремля"
+        link="Гид по Якиманке →"
+        map="polyanka-photo.png"
+      />
       <Maps map="map.png" />
     </div>
-  </BodyClassName>
-;
+  </BodyClassName>;

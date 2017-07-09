@@ -1,7 +1,7 @@
-import React, {Component} from 'react';
-import styled from 'styled-components';
+import React, { Component } from "react";
+import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { Grid, Row, Col } from 'react-flexbox-grid';
+import { Grid, Row, Col } from "react-flexbox-grid";
 import Image from "../Image";
 
 const MapStyled = styled.div`
@@ -36,13 +36,15 @@ const Distance = styled.p`
   color: #a9afb6;
 `;
 
-
-
 function Locations(props) {
-  const content = props.list.map((photo) =>
+  const content = props.list.map(photo =>
     <Location>
-      <Address>{photo.name}</Address>
-      <Distance>{photo.desc}</Distance>
+      <Address>
+        {photo.name}
+      </Address>
+      <Distance>
+        {photo.desc}
+      </Distance>
     </Location>
   );
 
@@ -55,16 +57,16 @@ function Locations(props) {
 
 const locationList = [
   {
-    name: 'Красный Октябрь',
-    desc: '4 минуты, 6 км'
+    name: "Красный Октябрь",
+    desc: "4 минуты, 6 км"
   },
   {
-    name: 'Красный Октябрь',
-    desc: '24 минуты, 6 км'
+    name: "Красный Октябрь",
+    desc: "24 минуты, 6 км"
   },
   {
-    name: 'Красный Октябрь',
-    desc: '74 минуты, 6 км'
+    name: "Красный Октябрь",
+    desc: "74 минуты, 6 км"
   }
 ];
 
@@ -85,5 +87,4 @@ export default props =>
         </Col>
       </Row>
     </MapStyled>
-  </Grid>
-;
+  </Grid>;

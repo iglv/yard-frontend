@@ -1,7 +1,7 @@
-import React, {Component} from 'react';
-import styled from 'styled-components';
+import React, { Component } from "react";
+import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { Grid, Row, Col } from 'react-flexbox-grid';
+import { Grid, Row, Col } from "react-flexbox-grid";
 
 const PhotosWrap = styled.div`
   display: flex;
@@ -20,9 +20,8 @@ const LinkTotal = styled(Link)`
   background-color: #00779a;
 `;
 
-
 function PhotosShow(props) {
-  const content = props.photos.map((photo) =>
+  const content = props.photos.map(photo =>
     <img src={photo.url} alt={photo.caption} />
   );
 
@@ -35,28 +34,28 @@ function PhotosShow(props) {
 
 const photoList = [
   {
-    url: 'img/photos/1.jpg',
-    caption: 'Фасад'
+    url: "img/photos/1.jpg",
+    caption: "Фасад"
   },
   {
-    url: 'img/photos/2.jpg',
-    caption: 'Вид сверху'
+    url: "img/photos/2.jpg",
+    caption: "Вид сверху"
   },
   {
-    url: 'img/photos/4.jpg',
-    caption: 'Вид сверху'
+    url: "img/photos/4.jpg",
+    caption: "Вид сверху"
   },
   {
-    url: 'img/photos/3.jpg',
-    caption: 'Вид сзади'
+    url: "img/photos/3.jpg",
+    caption: "Вид сзади"
   },
   {
-    url: 'img/photos/2.jpg',
-    caption: 'Вид охуенный'
+    url: "img/photos/2.jpg",
+    caption: "Вид охуенный"
   },
   {
-    url: 'img/photos/1.jpg',
-    caption: 'Вид просто'
+    url: "img/photos/1.jpg",
+    caption: "Вид просто"
   }
 ];
 
@@ -66,7 +65,8 @@ export default props =>
   <div>
     <PhotosShow photos={photoList} />
     <Grid>
-      <LinkTotal to="/">{total} фотография</LinkTotal>
+      <LinkTotal to="/">
+        {total} фотография
+      </LinkTotal>
     </Grid>
-  </div>
-;
+  </div>;

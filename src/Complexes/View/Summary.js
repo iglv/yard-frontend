@@ -1,7 +1,7 @@
-import React, {Component} from 'react';
-import styled from 'styled-components';
+import React, { Component } from "react";
+import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { Grid, Row, Col } from 'react-flexbox-grid';
+import { Grid, Row, Col } from "react-flexbox-grid";
 
 const Summary = styled.div`
   display: flex;
@@ -11,9 +11,7 @@ const Summary = styled.div`
   border-bottom: solid 1px #e0e0e1;
 `;
 
-const Property = styled.div`
-  padding-right: 3rem;
-`;
+const Property = styled.div`padding-right: 3rem;`;
 
 const Title = styled.h2`
   font-family: 'Philosopher';
@@ -30,19 +28,23 @@ const Subtitle = styled.small`
   color: #a9afb6;
 `;
 
-
 export default props =>
   <Grid>
     <Summary>
       <Property>
-        <Title>{props.sentences} <Subtitle>предложений</Subtitle></Title>
+        <Title>
+          {props.sentences} <Subtitle>предложений</Subtitle>
+        </Title>
       </Property>
       <Property>
-        <Title>{props.architect} <Subtitle>архитектор</Subtitle></Title>
+        <Title>
+          {props.architect} <Subtitle>архитектор</Subtitle>
+        </Title>
       </Property>
       <Property>
-        <Title>{props.developer} <Subtitle>застройщик</Subtitle></Title>
+        <Title>
+          {props.developer} <Subtitle>застройщик</Subtitle>
+        </Title>
       </Property>
     </Summary>
-  </Grid>
-;
+  </Grid>;

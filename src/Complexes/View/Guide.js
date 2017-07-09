@@ -1,7 +1,7 @@
-import React, {Component} from 'react';
-import styled from 'styled-components';
+import React, { Component } from "react";
+import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { Grid, Row, Col } from 'react-flexbox-grid';
+import { Grid, Row, Col } from "react-flexbox-grid";
 import Image from "../Image";
 
 const Guide = styled.div`
@@ -9,7 +9,7 @@ const Guide = styled.div`
   background-color: #3e4247;
 `;
 
-const Locate = styled.div`
+const Location = styled.div`
   font-family: 'Philosopher';
   font-size: 1.55rem;
   margin: 0;
@@ -41,9 +41,15 @@ export default props =>
     <Grid>
       <Row>
         <Col xs={6}>
-          <Locate>{props.locate}</Locate>
-          <Title>{props.title}</Title>
-          <LinkGuide to="/">{props.link}</LinkGuide>
+          <Location>
+            {props.locate}
+          </Location>
+          <Title>
+            {props.title}
+          </Title>
+          <LinkGuide to="/">
+            {props.link}
+          </LinkGuide>
         </Col>
         <Col xs={6}>
           <ImageGuide
@@ -55,5 +61,4 @@ export default props =>
         </Col>
       </Row>
     </Grid>
-  </Guide>
-;
+  </Guide>;

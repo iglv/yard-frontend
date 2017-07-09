@@ -1,11 +1,9 @@
-import React, {Component} from 'react';
-import styled from 'styled-components';
+import React, { Component } from "react";
+import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { Grid, Row, Col } from 'react-flexbox-grid';
+import { Grid, Row, Col } from "react-flexbox-grid";
 
-const Special = styled.div`
-  padding-top: 2rem;
-`;
+const Special = styled.div`padding-top: 2rem;`;
 
 const Title = styled.h2`
   font-family: 'Philosopher';
@@ -33,7 +31,6 @@ const Data = styled.dd`
   margin: 0;
   padding-bottom: .9rem;
 `;
-
 
 export default props =>
   <Grid>
@@ -87,5 +84,4 @@ export default props =>
         </Col>
       </Row>
     </Special>
-  </Grid>
-;
+  </Grid>;

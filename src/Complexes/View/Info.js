@@ -1,7 +1,7 @@
-import React, {Component} from 'react';
-import styled from 'styled-components';
+import React, { Component } from "react";
+import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { Grid, Row, Col } from 'react-flexbox-grid';
+import { Grid, Row, Col } from "react-flexbox-grid";
 
 const Info = styled.div`
   display: flex;
@@ -37,7 +37,6 @@ const LinkFavorite = styled(Link)`
   border-radius: 2px;
 `;
 
-
 export default props =>
   <Grid>
     <Info>
@@ -51,5 +50,4 @@ export default props =>
       </div>
       <LinkFavorite to="/">В избранное</LinkFavorite>
     </Info>
-  </Grid>
-;
+  </Grid>;
