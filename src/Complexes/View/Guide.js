@@ -48,12 +48,7 @@ export default props =>
           <LinkGuide to="/">Гид по Якиманке →</LinkGuide>
         </Col>
         <Col xs={6}>
-          <ImageGuide
-            src="polyanka-photo.png"
-            x2="polyanka-photo.png"
-            x3="polyanka-photo.png"
-            alt="polyanka-photo.png"
-          />
+          <ImageGuide src="polyanka-photo.png" alt="Полянка" />
         </Col>
       </Row>
     </Grid>

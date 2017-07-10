@@ -36,7 +36,7 @@ const Distance = styled.p`
   color: #a9afb6;
 `;
 
-const locationList = [
+const locations = [
   {
     name: "Красный Октябрь",
     distance: "4 минуты, 6 км"
@@ -56,11 +56,11 @@ export default props =>
     <MapStyled>
       <Row>
         <Col xs={6}>
-          <ImageMap src="map.png" x2="map.png" x3="map.png" alt="Карта" />
+          <ImageMap src="map.png" alt="Карта" />
         </Col>
         <Col xs={6}>
           <Locations>
-            {locationList.map(({ name, distance }, index) =>
+            {locations.map(({ name, distance }, index) =>
               <Location>
                 <Address>
                   {name}

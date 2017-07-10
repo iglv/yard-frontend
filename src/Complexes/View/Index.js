@@ -36,7 +36,7 @@ export default props =>
       />
       <Photos />
       <Summary
-        offers="950"
+        offers={950}
         architect="John McAslan + Partners"
         developer="Группа «ПСН»"
       />

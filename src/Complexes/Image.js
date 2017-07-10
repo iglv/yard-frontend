@@ -7,7 +7,7 @@ export default props => {
     <img
       className={props.className}
       src={imagesPath + props.src}
-      srcSet={imagesPath + props.x2 + " 2x, " + imagesPath + props.x3 + " 3x"}
+      srcSet={imagesPath + props.src + " 2x, " + imagesPath + props.src + " 3x"}
       alt={props.alt}
     />
   );
