@@ -56,7 +56,7 @@ export default props =>
     <MapStyled>
       <Row>
         <Col xs={6}>
-          <ImageMap src="map.png" alt="Карта" />
+          <ImageMap src={process.env.PUBLIC_URL + "/img/map.png"} alt="Карта" />
         </Col>
         <Col xs={6}>
           <Locations>

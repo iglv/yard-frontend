@@ -47,8 +47,6 @@ const images = [
   }
 ];
 
-const total = images.length;
-
 export default props =>
   <div>
     <PhotosWrap>
@@ -56,7 +54,7 @@ export default props =>
     </PhotosWrap>
     <Grid>
       <LinkTotal to="/">
-        {total} фотография
+        {images.length} фотография
       </LinkTotal>
     </Grid>
   </div>;

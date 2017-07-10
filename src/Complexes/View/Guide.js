@@ -48,7 +48,10 @@ export default props =>
           <LinkGuide to="/">Гид по Якиманке →</LinkGuide>
         </Col>
         <Col xs={6}>
-          <ImageGuide src="polyanka-photo.png" alt="Полянка" />
+          <ImageGuide
+            src={process.env.PUBLIC_URL + "/img/polyanka-photo.png"}
+            alt="Полянка"
+          />
         </Col>
       </Row>
     </Grid>
