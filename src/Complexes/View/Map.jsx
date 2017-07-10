@@ -1,8 +1,7 @@
-import React, { Component } from "react";
-import styled from "styled-components";
-import { Link } from "react-router-dom";
-import { Grid, Row, Col } from "react-flexbox-grid";
-import Image from "../Image";
+import React from 'react';
+import styled from 'styled-components';
+import { Grid, Row, Col } from 'react-flexbox-grid';
+import Image from '../Image';
 
 const MapStyled = styled.div`
   margin-top: -10.3rem;
@@ -38,40 +37,40 @@ const Distance = styled.p`
 
 const locations = [
   {
-    name: "Красный Октябрь",
-    distance: "4 минуты, 6 км"
+    name: 'Красный Октябрь',
+    distance: '4 минуты, 6 км',
   },
   {
-    name: "Красный Октябрь",
-    distance: "24 минуты, 6 км"
+    name: 'Красный Октябрь',
+    distance: '24 минуты, 6 км',
   },
   {
-    name: "Красный Октябрь",
-    distance: "74 минуты, 6 км"
-  }
+    name: 'Красный Октябрь',
+    distance: '74 минуты, 6 км',
+  },
 ];
 
-export default props =>
-  <Grid>
+export default () =>
+  (<Grid>
     <MapStyled>
       <Row>
         <Col xs={6}>
-          <ImageMap src={process.env.PUBLIC_URL + "/img/map.png"} alt="Карта" />
+          <ImageMap src={`${process.env.PUBLIC_URL}/img/map.png`} alt="Карта" />
         </Col>
         <Col xs={6}>
           <Locations>
-            {locations.map(({ name, distance }, index) =>
-              <Location>
+            {locations.map(({ name, distance }) =>
+              (<Location>
                 <Address>
                   {name}
                 </Address>
                 <Distance>
                   {distance}
                 </Distance>
-              </Location>
+              </Location>),
             )}
           </Locations>
         </Col>
       </Row>
     </MapStyled>
-  </Grid>;
+  </Grid>);

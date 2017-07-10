@@ -1,8 +1,8 @@
-import React, { Component } from "react";
-import styled from "styled-components";
-import { Link } from "react-router-dom";
-import { Grid, Row, Col } from "react-flexbox-grid";
-import Image from "../Image";
+import React from 'react';
+import styled from 'styled-components';
+import { Link } from 'react-router-dom';
+import { Grid, Row, Col } from 'react-flexbox-grid';
+import Image from '../Image';
 
 const Guide = styled.div`
   padding: 4rem 0 14rem;
@@ -36,8 +36,8 @@ const ImageGuide = styled(Image)`
   height: 560px;
 `;
 
-export default props =>
-  <Guide>
+export default() =>
+  (<Guide>
     <Grid>
       <Row>
         <Col xs={6}>
@@ -49,10 +49,10 @@ export default props =>
         </Col>
         <Col xs={6}>
           <ImageGuide
-            src={process.env.PUBLIC_URL + "/img/polyanka-photo.png"}
+            src={`${process.env.PUBLIC_URL}/img/polyanka-photo.png`}
             alt="Полянка"
           />
         </Col>
       </Row>
     </Grid>
-  </Guide>;
+  </Guide>);

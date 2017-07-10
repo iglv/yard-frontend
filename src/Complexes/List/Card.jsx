@@ -1,7 +1,6 @@
-import React, { Component } from "react";
-import styled from "styled-components";
-import { Link } from "react-router-dom";
-import { Grid, Row, Col } from "react-flexbox-grid";
+import React from 'react';
+import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 const Card = styled(Link)`
   display: flex;
@@ -50,11 +49,12 @@ const Description = styled.p`
 `;
 
 export default props =>
-  <Card to="/сomplex">
+  (<Card to="/сomplex">
     <div>
       <img
         src="img/cards/bitmap.png"
         srcSet="img/cards/bitmap@2x.png 2x, img/cards/bitmap@3x.png 3x"
+        alt="Img"
       />
     </div>
     <Info>
@@ -68,4 +68,4 @@ export default props =>
         {props.children}
       </Description>
     </Info>
-  </Card>;
+  </Card>);

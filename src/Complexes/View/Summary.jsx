@@ -1,7 +1,6 @@
-import React, { Component } from "react";
-import styled from "styled-components";
-import { Link } from "react-router-dom";
-import { Grid, Row, Col } from "react-flexbox-grid";
+import React from 'react';
+import styled from 'styled-components';
+import { Grid } from 'react-flexbox-grid';
 
 const Summary = styled.div`
   display: flex;
@@ -29,7 +28,7 @@ const Subtitle = styled.small`
 `;
 
 export default props =>
-  <Grid>
+  (<Grid>
     <Summary>
       <Property>
         <Title>
@@ -47,4 +46,4 @@ export default props =>
         </Title>
       </Property>
     </Summary>
-  </Grid>;
+  </Grid>);

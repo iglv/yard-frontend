@@ -1,7 +1,6 @@
-import React, { Component } from "react";
-import styled from "styled-components";
-import { Link } from "react-router-dom";
-import { Grid, Row, Col } from "react-flexbox-grid";
+import React from 'react';
+import styled from 'styled-components';
+import { Grid, Row, Col } from 'react-flexbox-grid';
 
 const Wrapper = styled.div`padding-top: 2.3rem;`;
 
@@ -17,8 +16,8 @@ const Paragraph = styled.div`
   padding-bottom: 1.5rem;
 `;
 
-export default props =>
-  <Wrapper>
+export default() =>
+  (<Wrapper>
     <Grid>
       <Row>
         <Col xs={2}>
@@ -60,4 +59,4 @@ export default props =>
         </Col>
       </Row>
     </Grid>
-  </Wrapper>;
+  </Wrapper>);

@@ -1,7 +1,7 @@
-import React from "react";
-import styled from "styled-components";
-import { Link } from "react-router-dom";
-import { Grid, Row, Col } from "react-flexbox-grid";
+import React from 'react';
+import styled from 'styled-components';
+import { Link } from 'react-router-dom';
+import { Grid } from 'react-flexbox-grid';
 
 const Headline = styled.div`
   max-width: 50rem;
@@ -42,18 +42,16 @@ const LinkStyled = styled(Link)`
   }
 `;
 
-export default () => {
-  return (
-    <Grid>
-      <Headline>
-        <Title>Discover Our New Developments</Title>
-        <Description>
+export default () => (
+  <Grid>
+    <Headline>
+      <Title>Discover Our New Developments</Title>
+      <Description>
           Compass brings a modern approach to new development marketing and
           sales. From boutique rental conversions to luxurious ground-up
           condominiums, browse our portfolio of current offerings.
         </Description>
-        <LinkStyled to="/">Contact The Team</LinkStyled>
-      </Headline>
-    </Grid>
+      <LinkStyled to="/">Contact The Team</LinkStyled>
+    </Headline>
+  </Grid>
   );
-};

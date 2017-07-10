@@ -1,7 +1,6 @@
-import React, { Component } from "react";
-import styled from "styled-components";
-import { Link } from "react-router-dom";
-import { Grid, Row, Col } from "react-flexbox-grid";
+import React from 'react';
+import styled from 'styled-components';
+import { Grid, Row, Col } from 'react-flexbox-grid';
 
 const Special = styled.div`padding-top: 2rem;`;
 
@@ -32,7 +31,7 @@ const Data = styled.dd`
   padding-bottom: .9rem;
 `;
 
-export default props =>
+export default () => (
   <Grid>
     <Special>
       <Title>Характеристики</Title>
@@ -84,4 +83,5 @@ export default props =>
         </Col>
       </Row>
     </Special>
-  </Grid>;
+  </Grid>
+  );

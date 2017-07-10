@@ -1,7 +1,6 @@
-import React, { Component } from "react";
-import styled from "styled-components";
-import { Link } from "react-router-dom";
-import { Grid, Row, Col } from "react-flexbox-grid";
+import React from 'react';
+import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 const LinkStyled = styled(Link)`
   font-weight: 300;
@@ -49,7 +48,7 @@ const Btn = styled.div`
 `;
 
 export default props =>
-  <Offer>
+  (<Offer>
     <Title>
       {props.title}
     </Title>
@@ -64,4 +63,4 @@ export default props =>
     <Btn>
       <LinkStyled to="/">Посмотреть предложения</LinkStyled>
     </Btn>
-  </Offer>;
+  </Offer>);
