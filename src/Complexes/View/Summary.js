@@ -33,7 +33,7 @@ export default props =>
     <Summary>
       <Property>
         <Title>
-          {props.sentences} <Subtitle>предложений</Subtitle>
+          {props.offers} <Subtitle>предложений</Subtitle>
         </Title>
       </Property>
       <Property>

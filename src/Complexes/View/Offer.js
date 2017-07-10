@@ -51,7 +51,7 @@ const Btn = styled.div`
 export default props =>
   <Offer>
     <Title>
-      {props.room}-комнатные квартиры
+      {props.title}
     </Title>
     <Info>
       <Name>Площадь</Name>

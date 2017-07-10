@@ -3,7 +3,6 @@
   "version": "0.0.1",
   "private": true,
   "dependencies": {
-    "get-stdin": "^5.0.1",
     "react": "^15.6.1",
     "react-body-classname": "^1.2.0",
     "react-dom": "^15.6.1",

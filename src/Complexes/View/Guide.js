@@ -41,22 +41,18 @@ export default props =>
     <Grid>
       <Row>
         <Col xs={6}>
-          <Location>
-            {props.locate}
-          </Location>
+          <Location>Якиманка</Location>
           <Title>
-            {props.title}
+            Исторический центр Москвы в двух километрах&nbsp;от Кремля
           </Title>
-          <LinkGuide to="/">
-            {props.link}
-          </LinkGuide>
+          <LinkGuide to="/">Гид по Якиманке →</LinkGuide>
         </Col>
         <Col xs={6}>
           <ImageGuide
-            src={props.map}
-            x2={props.map}
-            x3={props.map}
-            alt={props.title}
+            src="polyanka-photo.png"
+            x2="polyanka-photo.png"
+            x3="polyanka-photo.png"
+            alt="polyanka-photo.png"
           />
         </Col>
       </Row>

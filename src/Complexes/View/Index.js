@@ -36,7 +36,7 @@ export default props =>
       />
       <Photos />
       <Summary
-        sentences="950"
+        offers="950"
         architect="John McAslan + Partners"
         developer="Группа «ПСН»"
       />
@@ -51,21 +51,21 @@ export default props =>
           <Row>
             <Col xs={4}>
               <Offer
-                room={1}
+                title="1-комнатные квартиры"
                 space={{ min: 59, max: 120 }}
                 price={{ min: 20.3, max: 84.2 }}
               />
             </Col>
             <Col xs={4}>
               <Offer
-                room={2}
+                title="2-комнатные квартиры"
                 space={{ min: 59, max: 120 }}
                 price={{ min: 20.3, max: 84.2 }}
               />
             </Col>
             <Col xs={4}>
               <Offer
-                room={3}
+                title="3-комнатные квартиры"
                 space={{ min: 59, max: 120 }}
                 price={{ min: 20.3, max: 84.2 }}
               />
@@ -73,12 +73,7 @@ export default props =>
           </Row>
         </Grid>
       </Offers>
-      <Guide
-        locate="Якиманка"
-        title="Исторический центр Москвы в двух километрах&nbsp;от Кремля"
-        link="Гид по Якиманке →"
-        map="polyanka-photo.png"
-      />
-      <Maps map="map.png" />
+      <Guide />
+      <Maps />
     </div>
   </BodyClassName>;
