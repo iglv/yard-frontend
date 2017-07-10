@@ -7,7 +7,7 @@ import Complex from './Complexes/View';
 import Header from './Header';
 import Footer from './Footer';
 
-export default props =>
+export default() =>
   (<Router>
     <div>
       <Header />
