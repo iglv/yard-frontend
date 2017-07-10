@@ -20,18 +20,6 @@ const LinkTotal = styled(Link)`
   background-color: #00779a;
 `;
 
-function PhotosShow(props) {
-  const content = props.photos.map(photo =>
-    <img src={photo.url} alt={photo.caption} />
-  );
-
-  return (
-    <PhotosWrap>
-      {content}
-    </PhotosWrap>
-  );
-}
-
 const photoList = [
   {
     url: "img/photos/1.jpg",
@@ -63,7 +51,11 @@ const total = photoList.length;
 
 export default props =>
   <div>
-    <PhotosShow photos={photoList} />
+    <PhotosWrap>
+      {photoList.map(({ url, caption }, index) =>
+        <img src={url} alt={caption} />
+      )}
+    </PhotosWrap>
     <Grid>
       <LinkTotal to="/">
         {total} фотография
