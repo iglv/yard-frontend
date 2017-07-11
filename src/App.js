@@ -8,7 +8,7 @@ import Header from './Header';
 import Footer from './Footer';
 
 export default() =>
-  (<Router>
+  (<Router onUpdate={() => window.scrollTo(0, 0)}>
     <div>
       <Header />
       <Route exact path="/" component={Complexes} />
