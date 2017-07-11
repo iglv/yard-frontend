@@ -1,9 +1,9 @@
 import React from 'react';
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import { Grid, Row, Col } from 'react-flexbox-grid';
+import { Grid } from 'react-flexbox-grid';
 
-import logo from "./img/compass-logo.svg";
+import logo from './img/compass-logo.svg';
 
 const Header = styled.header`
   padding-top: 1rem;
@@ -28,19 +28,17 @@ const Url = styled(Link)`
   color: #3e4247;
 `;
 
-export default () => {
-  return (
-    <Header>
-      <Grid>
-        <Wrap>
-          <Link to="/"><img src={logo} alt="Logo" height={24} /></Link>
-          <Links>
-            <Url to="/">Купить</Url>
-            <Url to="/">Снять</Url>
-            <Url to="/">Наши агенты</Url>
-          </Links>
-        </Wrap>
-      </Grid>
-    </Header>
+export default () => (
+  <Header>
+    <Grid>
+      <Wrap>
+        <Link to="/"><img src={logo} alt="Logo" height={24} /></Link>
+        <Links>
+          <Url to="/">Купить</Url>
+          <Url to="/">Снять</Url>
+          <Url to="/">Наши агенты</Url>
+        </Links>
+      </Wrap>
+    </Grid>
+  </Header>
   );
-};
