@@ -14,7 +14,6 @@ class Cards extends React.Component {
   }
 
   componentDidMount() {
-    const that = this;
     const url = 'https://yard.moscow/api/v1/complexes?filter%5Bstate%5D=public';
 
     fetch(url)
@@ -25,21 +24,20 @@ class Cards extends React.Component {
       return response.json();
     })
     .then((data) => {
-      that.setState({ items: data.items });
+      this.setState({ items: data.items });
     });
   }
-  // {post.images[0]}
+
   render() {
-    // console.log(this.state.items);
     return (
       <CardsStyled>
         {this.state.items.map(post =>
-          (<Card
-            id={post.id}
-            location={`${post.location.subLocalityName}, ${post.location.street} ${post.location.house}`}
-            title={post.name}
-            image={post.images[0].id}
-          />),
+        (<Card
+          id={post.id}
+          location={`${post.location.subLocalityName}, ${post.location.street} ${post.location.house}`}
+          title={post.name}
+          image={post.images[0].id}
+        />),
         )}
       </CardsStyled>
     );

@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Grid, Row, Col } from 'react-flexbox-grid';
+import { securityKinds, constructionKinds, quarters } from './Dictionaries';
 
 const Special = styled.div`padding-top: 2rem;`;
 
@@ -31,57 +32,88 @@ const Data = styled.dd`
   padding-bottom: .9rem;
 `;
 
-export default () => (
-  <Grid>
-    <Special>
-      <Title>Характеристики</Title>
-      <Row>
-        <Col xs={4}>
-          <Wrap>
-            <Name>Количество квартир</Name>
-            <Data>1 503</Data>
+export default function (props) {
+  const statistics = props.complex.statistics || {};
+  const totalPrimaryArea = statistics.totalPrimaryArea || {};
+  const price = statistics.price || {};
+  const priceFrom = price.from || {};
+  const priceTo = price.to || {};
+  const details = props.complex.details || {};
+  const ceilHeight = details.ceilHeight || {};
 
-            <Name>Статус</Name>
-            <Data>Квартиры</Data>
+  return (
+    <Grid>
+      <Special>
+        <Title>Характеристики</Title>
+        <Row>
+          <Col xs={4}>
+            <Wrap>
+              <Name>Количество квартир</Name>
+              <Data>{statistics.propertiesCount}</Data>
 
-            <Name>Цены</Name>
-            <Data>от 5.3 до 143.5 млн</Data>
+              <Name>Статус</Name>
+              <Data>{details.status}</Data>
 
-            <Name>Безопасность</Name>
-            <Data>Охраняемая территория</Data>
-          </Wrap>
-        </Col>
-        <Col xs={4}>
-          <Wrap>
-            <Name>Конструкция корпусов</Name>
-            <Data>монолит</Data>
+              <Name>Цены</Name>
+              <Data>
+                От {Math.floor(priceFrom.rub / 10000) / 100} до&nbsp;
+                {Math.floor(priceTo.rub / 10000) / 100} млн
+              </Data>
 
-            <Name>Площадь</Name>
-            <Data>от 50 до 154 м²</Data>
+              <Name>Безопасность</Name>
+              <Data>{securityKinds[details.security]}</Data>
+            </Wrap>
+          </Col>
+          <Col xs={4}>
+            <Wrap>
+              <Name>Конструкция корпусов</Name>
+              <Data>{constructionKinds[details.constructionKind]}</Data>
 
-            <Name>Высота потолков</Name>
-            <Data>3.45 − 5 м</Data>
+              <Name>Площадь</Name>
+              <Data>
+                От {Math.floor(totalPrimaryArea.from * 100) / 100} до&nbsp;
+                {Math.floor(totalPrimaryArea.to * 100) / 100} м²
+              </Data>
 
-            <Name>Обслуживание</Name>
-            <Data>1 200 руб / м² / месяц</Data>
-          </Wrap>
-        </Col>
-        <Col xs={4}>
-          <Wrap>
-            <Name>Начало строительства</Name>
-            <Data>I квартал 2012 года</Data>
+              <Name>Высота потолков</Name>
+              <Data>
+                {Math.floor(ceilHeight.from * 100) / 100} -&nbsp;
+                {Math.floor(ceilHeight.to * 100) / 100} м
+              </Data>
 
-            <Name>Конец строительства</Name>
-            <Data>IV квартал 2018 года</Data>
+              <Name>Обслуживание</Name>
+              <Data>{details.maintenanceCosts} руб / м² / месяц</Data>
+            </Wrap>
+          </Col>
+          <Col xs={4}>
+            <Wrap>
+              <Name>Начало строительства</Name>
+              <Data>
+                {details.startYear} года
+                {quarters[details.startQuarter]} квартал
+              </Data>
 
-            <Name>Наземная парковка</Name>
-            <Data>1 500 м/м</Data>
+              <Name>Конец строительства</Name>
+              <Data>
+                {details.commissioningYear} года
+                {quarters[details.commissioningQuarter]} квартал
+              </Data>
 
-            <Name>Подземная парковка</Name>
-            <Data>Нет</Data>
-          </Wrap>
-        </Col>
-      </Row>
-    </Special>
-  </Grid>
+              <Name>Наземная парковка</Name>
+              <Data>
+                {details.parking === undefined && 'Нет'}
+                {details.parking > 0 && `${details.parking} м/м`}
+              </Data>
+
+              <Name>Подземная парковка</Name>
+              <Data>
+                {details.undergroundGarages === undefined && 'Нет'}
+                {details.undergroundGarages > 0 && `${details.undergroundGarages} м/м`}
+              </Data>
+            </Wrap>
+          </Col>
+        </Row>
+      </Special>
+    </Grid>
   );
+}

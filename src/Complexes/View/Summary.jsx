@@ -32,17 +32,17 @@ export default props =>
     <Summary>
       <Property>
         <Title>
-          {props.offers} <Subtitle>предложений</Subtitle>
+          {props.offers || '—'} <Subtitle>предложений</Subtitle>
         </Title>
       </Property>
       <Property>
         <Title>
-          {props.architect} <Subtitle>архитектор</Subtitle>
+          {props.architect || '—'} <Subtitle>архитектор</Subtitle>
         </Title>
       </Property>
       <Property>
         <Title>
-          {props.developer} <Subtitle>застройщик</Subtitle>
+          {props.developer || '—'} <Subtitle>застройщик</Subtitle>
         </Title>
       </Property>
     </Summary>

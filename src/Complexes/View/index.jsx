@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import BodyClassName from 'react-body-classname';
 import styled from 'styled-components';
 import { Grid, Row, Col } from 'react-flexbox-grid';
@@ -25,55 +25,90 @@ const Title = styled.h2`
   padding-bottom: 1.5rem;
 `;
 
-const complexName = 'Жилой комплекс «Полянка/44»';
 
-export default() =>
-  (<BodyClassName className="bg-white">
-    <div>
-      <Info
-        title={complexName}
-        address="Район Якиманка, улица Большая Полянка, дом 44 • 119180"
-      />
-      <Photos />
-      <Summary
-        offers={950}
-        architect="John McAslan + Partners"
-        developer="Группа «ПСН»"
-      />
-      <Special />
-      <Description />
-      <Infrastructure />
-      <Offers>
-        <Grid>
-          <Title>
-            Предложения {complexName}
-          </Title>
-          <Row>
-            <Col xs={4}>
-              <Offer
-                title="1-комнатные квартиры"
-                space={{ min: 59, max: 120 }}
-                price={{ min: 20.3, max: 84.2 }}
-              />
-            </Col>
-            <Col xs={4}>
-              <Offer
-                title="2-комнатные квартиры"
-                space={{ min: 59, max: 120 }}
-                price={{ min: 20.3, max: 84.2 }}
-              />
-            </Col>
-            <Col xs={4}>
-              <Offer
-                title="3-комнатные квартиры"
-                space={{ min: 59, max: 120 }}
-                price={{ min: 20.3, max: 84.2 }}
-              />
-            </Col>
-          </Row>
-        </Grid>
-      </Offers>
-      <Guide />
-      <Maps />
-    </div>
-  </BodyClassName>);
+class Complex extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      complex: {},
+    };
+  }
+
+  componentDidMount() {
+    const url = `https://yard.moscow/api/v1/complexes/${this.props.match.params.id}`;
+
+    fetch(url)
+    .then((response) => {
+      if (response.status >= 400) {
+        throw new Error('Bad response from server');
+      }
+      return response.json();
+    })
+    .then((data) => {
+      this.setState({
+        complex: data,
+      });
+    });
+  }
+
+  render() {
+    const location = this.state.complex.location || {};
+    const details = this.state.complex.details || {};
+    const statistics = this.state.complex.statistics || {};
+    const description = this.state.complex.description || 'Not found';
+
+    return (
+      <BodyClassName className="bg-white">
+        <div>
+          <Info
+            title={this.state.complex.name}
+            address={`${location.subLocalityName}, ${location.street} ${location.house}`}
+          />
+          <Photos images={this.state.complex.images} />
+          <Summary
+            offers={statistics.propertiesCount}
+            architect={details.architect}
+            developer={details.developer}
+          />
+          <Special complex={this.state.complex} />
+          <Description>{description}</Description>
+          <Infrastructure />
+          <Offers>
+            <Grid>
+              <Title>
+                  Предложения
+              </Title>
+              <Row>
+                <Col xs={4}>
+                  <Offer
+                    title="1-комнатные квартиры"
+                    space={{ min: 59, max: 120 }}
+                    price={{ min: 20.3, max: 84.2 }}
+                  />
+                </Col>
+                <Col xs={4}>
+                  <Offer
+                    title="2-комнатные квартиры"
+                    space={{ min: 59, max: 120 }}
+                    price={{ min: 20.3, max: 84.2 }}
+                  />
+                </Col>
+                <Col xs={4}>
+                  <Offer
+                    title="3-комнатные квартиры"
+                    space={{ min: 59, max: 120 }}
+                    price={{ min: 20.3, max: 84.2 }}
+                  />
+                </Col>
+              </Row>
+            </Grid>
+          </Offers>
+          <Guide />
+          <Maps />
+        </div>
+      </BodyClassName>
+    );
+  }
+}
+
+export default Complex;
