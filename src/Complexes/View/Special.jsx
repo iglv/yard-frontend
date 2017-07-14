@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 import { securityKinds, constructionKinds, quarters } from './Dictionaries';
 
+
 const Special = styled.div`padding-top: 2rem;`;
 
 const Title = styled.h2`

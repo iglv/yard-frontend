@@ -25,7 +25,6 @@ const Title = styled.h2`
   padding-bottom: 1.5rem;
 `;
 
-
 class Complex extends Component {
   constructor(props) {
     super(props);
