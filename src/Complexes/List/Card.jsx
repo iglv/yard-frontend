@@ -66,7 +66,7 @@ const CropImage = styled.div`
 export default props =>
   (<Card to={`/complex/${props.slug}`}>
     <CropImage>
-      <ImageComplex src={`https://yard-images.s3.amazonaws.com/${props.image}-512`} alt={props.title} />
+      <ImageComplex src={`https://yard-images.s3.amazonaws.com/${props.image}-1024`} alt={props.title} />
     </CropImage>
     <Info>
       <Location>
