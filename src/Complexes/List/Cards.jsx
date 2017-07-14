@@ -33,6 +33,7 @@ class Cards extends React.Component {
       <CardsStyled>
         {this.state.items.map(post =>
         (<Card
+          slug={post.slug}
           id={post.id}
           location={`${post.location.subLocalityName}, ${post.location.street} ${post.location.house}`}
           title={post.name}

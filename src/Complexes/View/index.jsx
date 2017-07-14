@@ -35,7 +35,7 @@ class Complex extends Component {
   }
 
   componentDidMount() {
-    const url = `https://yard.moscow/api/v1/complexes/${this.props.match.params.id}`;
+    const url = `https://yard.moscow/api/v1/complexes/${this.props.match.params.slug}`;
 
     fetch(url)
     .then((response) => {
@@ -56,6 +56,7 @@ class Complex extends Component {
     const details = this.state.complex.details || {};
     const statistics = this.state.complex.statistics || {};
     const description = this.state.complex.description || 'Not found';
+    const amenities = this.state.complex.amenities || {};
 
     return (
       <BodyClassName className="bg-white">
@@ -72,7 +73,7 @@ class Complex extends Component {
           />
           <Special complex={this.state.complex} />
           <Description>{description}</Description>
-          <Infrastructure />
+          <Infrastructure complex={amenities} />
           <Offers>
             <Grid>
               <Title>

@@ -14,33 +14,21 @@ const Title = styled.h2`
   margin: 0;
 `;
 
-export default () => (
-  <Grid>
-    <Infrastructure>
-      <Title>Инфраструктура</Title>
-      <Row>
-        <Col xs={2}>
-          <p>Бассейн</p>
-          <p>Частная школа</p>
-        </Col>
-        <Col xs={2}>
-          <p>Детский сад</p>
-          <p>Частная школа</p>
-        </Col>
-        <Col xs={2}>
-          <p>Частная школа</p>
-          <p>Частная школа</p>
-        </Col>
-        <Col xs={2}>
-          <p>Частная школа</p>
-        </Col>
-        <Col xs={2}>
-          <p>Частная школа</p>
-        </Col>
-        <Col xs={2}>
-          <p>Частная школа</p>
-        </Col>
-      </Row>
-    </Infrastructure>
-  </Grid>
+export default function (props) {
+  return (
+    <Grid>
+      <Infrastructure>
+        {props.amenities && <Title>Инфраструктура</Title>}
+        {props.amenities &&
+          <Row>
+            {props.amenities.map(amenity =>
+              (<Col lg={2}>
+                <p>{amenity}</p>
+              </Col>),
+            )}
+          </Row>
+        }
+      </Infrastructure>
+    </Grid>
   );
+}
