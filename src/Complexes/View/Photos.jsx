@@ -36,7 +36,7 @@ export default function (props) {
         </PhotosWrap>
         <Grid>
           <LinkTotal to="/">
-            {images.length} фотография
+            {images.length} фото
           </LinkTotal>
         </Grid>
       </Section>

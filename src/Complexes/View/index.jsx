@@ -54,7 +54,7 @@ class Complex extends Component {
     const location = this.state.complex.location || {};
     const details = this.state.complex.details || {};
     const statistics = this.state.complex.statistics || {};
-    const description = this.state.complex.description || 'Not found';
+    const description = this.state.complex.description;
     const amenities = this.state.complex.amenities || {};
 
     return (
@@ -76,7 +76,7 @@ class Complex extends Component {
           <Offers>
             <Grid>
               <Title>
-                  Предложения
+                  Предложения в {this.state.complex.name}
               </Title>
               <Row>
                 <Col xs={4}>
@@ -103,7 +103,7 @@ class Complex extends Component {
               </Row>
             </Grid>
           </Offers>
-          <Guide />
+          <Guide locality={location.subLocalityName} />
           <Maps />
         </div>
       </BodyClassName>

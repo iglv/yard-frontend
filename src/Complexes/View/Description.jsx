@@ -21,14 +21,16 @@ export default props =>
     <Grid>
       <Row>
         <Col xs={2}>
-          <Title>Описание</Title>
+          {props.children && <Title>Описание</Title>}
         </Col>
         <Col xs={10}>
-          <article>
-            <Paragraph>
-              {props.children}
-            </Paragraph>
-          </article>
+          {props.children &&
+            <article>
+              <Paragraph>
+                {props.children}
+              </Paragraph>
+            </article>
+          }
         </Col>
       </Row>
     </Grid>

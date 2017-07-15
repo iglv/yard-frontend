@@ -17,6 +17,7 @@ const Wrap = styled.dl`
   display: flex;
   flex-wrap: wrap;
   width: 100%;
+  margin: 0;
 `;
 
 const Name = styled.dt`
@@ -52,8 +53,8 @@ export default function (props) {
               <Name>Количество квартир</Name>
               <Data>{statistics.propertiesCount}</Data>
 
-              <Name>Статус</Name>
-              <Data>{details.status}</Data>
+              {details.status && <Name>Статус</Name>}
+              {details.status && <Data>{details.status}</Data>}
 
               <Name>Цены</Name>
               <Data>
@@ -90,13 +91,13 @@ export default function (props) {
             <Wrap>
               <Name>Начало строительства</Name>
               <Data>
-                {details.startYear} года
+                {details.startYear} года&nbsp;
                 {quarters[details.startQuarter]} квартал
               </Data>
 
               <Name>Конец строительства</Name>
               <Data>
-                {details.commissioningYear} года
+                {details.commissioningYear} года&nbsp;
                 {quarters[details.commissioningQuarter]} квартал
               </Data>
 
