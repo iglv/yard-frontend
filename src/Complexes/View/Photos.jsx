@@ -10,7 +10,7 @@ const Section = styled.section`
 const PhotosWrap = styled.div`
   display: flex;
   justify-content: flex-start;
-  padding-top: 1.5rem;
+  padding-top: 1rem;
 `;
 const LinkTotal = styled(Link)`
   font-size: .6rem;
