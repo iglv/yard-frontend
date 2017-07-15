@@ -16,22 +16,26 @@ const Paragraph = styled.div`
   padding-bottom: 1.5rem;
 `;
 
-export default props =>
-  (<Wrapper>
-    <Grid>
-      <Row>
-        <Col xs={2}>
-          {props.children && <Title>Описание</Title>}
-        </Col>
-        <Col xs={10}>
-          {props.children &&
-            <article>
-              <Paragraph>
-                {props.children}
-              </Paragraph>
-            </article>
-          }
-        </Col>
-      </Row>
-    </Grid>
-  </Wrapper>);
+export default function (props) {
+  if (props.children) {
+    return (
+      <Wrapper>
+        <Grid>
+          <Row>
+            <Col xs={2}>
+              <Title>Описание</Title>
+            </Col>
+            <Col xs={10}>
+              <article>
+                <Paragraph>
+                  {props.children}
+                </Paragraph>
+              </article>
+            </Col>
+          </Row>
+        </Grid>
+      </Wrapper>
+    );
+  }
+  return null;
+}

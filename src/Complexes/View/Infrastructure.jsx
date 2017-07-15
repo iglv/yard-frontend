@@ -15,20 +15,21 @@ const Title = styled.h2`
 `;
 
 export default function (props) {
-  return (
-    <Grid>
-      <Infrastructure>
-        {props.amenities && <Title>Инфраструктура</Title>}
-        {props.amenities &&
+  if (props.amenity) {
+    return (
+      <Grid>
+        <Infrastructure>
+          <Title>Инфраструктура</Title>
           <Row>
             {props.amenities.map(amenity =>
-              (<Col lg={2}>
-                <p>{amenity}</p>
-              </Col>),
-            )}
+                (<Col lg={2}>
+                  <p>{amenity}</p>
+                </Col>),
+              )}
           </Row>
-        }
-      </Infrastructure>
-    </Grid>
-  );
+        </Infrastructure>
+      </Grid>
+    );
+  }
+  return null;
 }
