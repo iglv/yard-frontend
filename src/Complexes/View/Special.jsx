@@ -4,7 +4,7 @@ import { Grid, Row, Col } from 'react-flexbox-grid';
 import { securityKinds, constructionKinds, quarters } from './Dictionaries';
 
 
-const Special = styled.div`padding-top: 2rem;`;
+const Special = styled.div`padding: 2rem 0;`;
 
 const Title = styled.h2`
   font-family: 'Philosopher';
