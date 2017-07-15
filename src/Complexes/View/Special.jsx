@@ -32,6 +32,7 @@ const Data = styled.dd`
   width: 50%;
   margin: 0;
   padding-bottom: .9rem;
+  font-weight: 500;
 `;
 
 export default function (props) {
