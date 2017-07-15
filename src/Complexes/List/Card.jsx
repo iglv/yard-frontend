@@ -33,6 +33,7 @@ const Location = styled.p`
   padding-bottom: 1.5rem;
   text-transform: uppercase;
   color: #646971;
+  margin: 0;
 `;
 
 const Title = styled.h3`
@@ -66,7 +67,12 @@ const CropImage = styled.div`
 export default props =>
   (<Card to={`/complex/${props.slug}`}>
     <CropImage>
-      <ImageComplex src={`https://yard-images.s3.amazonaws.com/${props.image}-1024`} alt={props.title} />
+      <ImageComplex
+        src={`https://yard-images.s3.amazonaws.com/${props.image}-1024`}
+        src2x={`https://yard-images.s3.amazonaws.com/${props.image}-1024`}
+        src3x={`https://yard-images.s3.amazonaws.com/${props.image}-1024`}
+        alt={props.title}
+      />
     </CropImage>
     <Info>
       <Location>
