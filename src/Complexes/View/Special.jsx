@@ -50,11 +50,20 @@ export default function (props) {
         <Row>
           <Col xs={4}>
             <Wrap>
-              <Name>Количество квартир</Name>
-              <Data>{statistics.propertiesCount}</Data>
+              {details.units &&
+                <div>
+                  <Name>Количество квартир</Name>
+                  <Data>{details.units}</Data>
+                </div>
+              }
 
-              {details.status && <Name>Статус</Name>}
-              {details.status && <Data>{details.status}</Data>}
+
+              {details.status &&
+                <div>
+                  <Name>Статус</Name>
+                  <Data>{details.status}</Data>
+                </div>
+              }
 
               <Name>Цены</Name>
               <Data>
@@ -73,14 +82,14 @@ export default function (props) {
 
               <Name>Площадь</Name>
               <Data>
-                От {Math.floor(totalPrimaryArea.from * 100) / 100} до&nbsp;
-                {Math.floor(totalPrimaryArea.to * 100) / 100} м²
+                От {Math.floor(totalPrimaryArea.from).toFixed()} до&nbsp;
+                {Math.floor(totalPrimaryArea.to).toFixed()} м²
               </Data>
 
               <Name>Высота потолков</Name>
               <Data>
-                {Math.floor(ceilHeight.from * 100) / 100} -&nbsp;
-                {Math.floor(ceilHeight.to * 100) / 100} м
+                {Math.floor(ceilHeight.from).toFixed()} -&nbsp;
+                {Math.floor(ceilHeight.to).toFixed()} м
               </Data>
 
               <Name>Обслуживание</Name>

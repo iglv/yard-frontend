@@ -62,9 +62,9 @@ class Complex extends Component {
         <div>
           <Info
             title={this.state.complex.name}
-            address={`${location.subLocalityName}, ${location.street} ${location.house}`}
+            address={`${location.localityName}, ${location.subLocalityName}, ${location.street} ${location.house}, ${location.postalCode}`}
           />
-          <Photos images={this.state.complex.images} />
+          <Photos images={this.state.complex.images} caption={this.state.complex.name} />
           <Summary
             offers={statistics.propertiesCount}
             architect={details.architect}

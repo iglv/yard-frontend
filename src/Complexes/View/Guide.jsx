@@ -51,7 +51,9 @@ export default function (props) {
           <Col xs={6}>
             <ImageGuide
               src={`${process.env.PUBLIC_URL}/img/polyanka-photo.png`}
-              alt="Полянка"
+              src2x={`${process.env.PUBLIC_URL}/img/polyanka-photo.png`}
+              src3x={`${process.env.PUBLIC_URL}/img/polyanka-photo.png`}
+              alt="{props.locality}"
             />
           </Col>
         </Row>

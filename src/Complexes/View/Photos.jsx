@@ -9,9 +9,8 @@ const Section = styled.section`
 `;
 const PhotosWrap = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   padding-top: 1.5rem;
-  justify-content: center;
 `;
 const LinkTotal = styled(Link)`
   font-size: .6rem;
@@ -27,12 +26,12 @@ const LinkTotal = styled(Link)`
 `;
 
 export default function (props) {
-  const images = props.images || [];
+  const images = props.images;
   if (props.images) {
     return (
       <Section>
         <PhotosWrap>
-          {images.map(({ id, caption }) => <img src={`https://yard-images.s3.amazonaws.com/${id}-512`} alt={caption} height={400} />)}
+          {images.map(({ id }) => <img src={`https://yard-images.s3.amazonaws.com/${id}-512`} alt={props.caption} height={400} />)}
         </PhotosWrap>
         <Grid>
           <LinkTotal to="/">
