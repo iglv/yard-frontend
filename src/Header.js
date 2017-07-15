@@ -14,7 +14,6 @@ const Header = styled.header`
 const Wrap = styled.div`
   display: flex;
   justify-content: space-between;
-  margin-left: -.5rem;
   padding-top: .3rem;
 `;
 const Links = styled.nav`
