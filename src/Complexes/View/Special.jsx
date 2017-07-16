@@ -83,14 +83,14 @@ export default function (props) {
 
               <Name>Площадь</Name>
               <Data>
-                От {Math.floor(totalPrimaryArea.from).toFixed()} до&nbsp;
-                {Math.floor(totalPrimaryArea.to).toFixed()} м²
+                От {Math.floor(totalPrimaryArea.from).toFixed(1)} до&nbsp;
+                {Math.floor(totalPrimaryArea.to).toFixed(1)} м²
               </Data>
 
               <Name>Высота потолков</Name>
               <Data>
-                {Math.floor(ceilHeight.from).toFixed()} -&nbsp;
-                {Math.floor(ceilHeight.to).toFixed()} м
+                {Math.floor(ceilHeight.from).toFixed(2)} -&nbsp;
+                {Math.floor(ceilHeight.to).toFixed(2)} м
               </Data>
 
               <Name>Обслуживание</Name>
@@ -101,14 +101,14 @@ export default function (props) {
             <Wrap>
               <Name>Начало строительства</Name>
               <Data>
-                {details.startYear} года&nbsp;
-                {quarters[details.startQuarter]} квартал
+                {quarters[details.startQuarter]} квартал&nbsp;
+                {details.startYear} года
               </Data>
 
               <Name>Конец строительства</Name>
               <Data>
-                {details.commissioningYear} года&nbsp;
-                {quarters[details.commissioningQuarter]} квартал
+                {quarters[details.commissioningQuarter]} квартал&nbsp;
+                {details.commissioningYear} года
               </Data>
 
               <Name>Наземная парковка</Name>
