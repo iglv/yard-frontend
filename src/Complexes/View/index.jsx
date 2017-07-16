@@ -42,11 +42,13 @@ class Complex extends Component {
 
 
   render() {
-    const location = this.state.complex.location || {};
-    const details = this.state.complex.details || {};
-    const statistics = this.state.complex.statistics || {};
-    const fullDescription = this.state.complex.fullDescription;
-    const amenities = this.state.complex.amenities || {};
+    const {
+      fullDescription,
+      location = {},
+      details = {},
+      statistics = {},
+      amenities = {},
+    } = this.state.complex || {};
 
     return (
       <BodyClassName className="bg-white">

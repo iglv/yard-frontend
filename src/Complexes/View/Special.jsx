@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 import { securityKinds, constructionKinds, quarters } from './Dictionaries';
 
-
 const Special = styled.div`padding: 2rem 0;`;
 
 const Title = styled.h2`
@@ -36,13 +35,25 @@ const Data = styled.dd`
 `;
 
 export default function (props) {
-  const statistics = props.complex.statistics || {};
-  const totalPrimaryArea = statistics.totalPrimaryArea || {};
-  const price = statistics.price || {};
-  const priceFrom = price.from || {};
-  const priceTo = price.to || {};
-  const details = props.complex.details || {};
-  const ceilHeight = details.ceilHeight || {};
+  const {
+    details = {},
+    details: {
+      ceilHeight: {
+        from: ceilHeightFrom,
+        to: ceilHeightTo,
+      } = {},
+    } = {},
+    statistics: {
+      price: {
+        from: { rub: priceFrom } = {},
+        to: { rub: priceTo } = {},
+      } = {},
+      totalPrimaryArea: {
+        from: totalPrimaryAreaFrom,
+        to: totalPrimaryAreaTo,
+      } = {},
+    } = {},
+  } = props.complex || {};
 
   return (
     <Grid>
@@ -54,47 +65,54 @@ export default function (props) {
               {details.units &&
                 <div>
                   <Name>Количество квартир</Name>
-                  <Data>{details.units}</Data>
-                </div>
-              }
-
+                  <Data>
+                    {details.units}
+                  </Data>
+                </div>}
 
               {details.status &&
                 <div>
                   <Name>Статус</Name>
-                  <Data>{details.status}</Data>
-                </div>
-              }
+                  <Data>
+                    {details.status}
+                  </Data>
+                </div>}
 
               <Name>Цены</Name>
               <Data>
-                От {Math.floor(priceFrom.rub / 10000) / 100} до&nbsp;
-                {Math.floor(priceTo.rub / 10000) / 100} млн
+                От {Math.floor(priceFrom / 10000) / 100} до&nbsp;
+                {Math.floor(priceTo / 10000) / 100} млн
               </Data>
 
               <Name>Безопасность</Name>
-              <Data>{securityKinds[details.security]}</Data>
+              <Data>
+                {securityKinds[details.security]}
+              </Data>
             </Wrap>
           </Col>
           <Col xs={4}>
             <Wrap>
               <Name>Конструкция корпусов</Name>
-              <Data>{constructionKinds[details.constructionKind]}</Data>
+              <Data>
+                {constructionKinds[details.constructionKind]}
+              </Data>
 
               <Name>Площадь</Name>
               <Data>
-                От {Math.floor(totalPrimaryArea.from).toFixed(1)} до&nbsp;
-                {Math.floor(totalPrimaryArea.to).toFixed(1)} м²
+                От {Math.floor(totalPrimaryAreaFrom).toFixed(1)} до&nbsp;
+                {Math.floor(totalPrimaryAreaTo).toFixed(1)} м²
               </Data>
 
               <Name>Высота потолков</Name>
               <Data>
-                {Math.floor(ceilHeight.from).toFixed(2)} -&nbsp;
-                {Math.floor(ceilHeight.to).toFixed(2)} м
+                {Math.floor(ceilHeightFrom).toFixed(2)} -&nbsp;
+                {Math.floor(ceilHeightTo).toFixed(2)} м
               </Data>
 
               <Name>Обслуживание</Name>
-              <Data>{details.maintenanceCosts} руб / м² / месяц</Data>
+              <Data>
+                {details.maintenanceCosts} руб / м² / месяц
+              </Data>
             </Wrap>
           </Col>
           <Col xs={4}>
@@ -120,7 +138,8 @@ export default function (props) {
               <Name>Подземная парковка</Name>
               <Data>
                 {details.undergroundGarages === undefined && 'Нет'}
-                {details.undergroundGarages > 0 && `${details.undergroundGarages} м/м`}
+                {details.undergroundGarages > 0 &&
+                  `${details.undergroundGarages} м/м`}
               </Data>
             </Wrap>
           </Col>
