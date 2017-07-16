@@ -45,7 +45,7 @@ class Complex extends Component {
     const location = this.state.complex.location || {};
     const details = this.state.complex.details || {};
     const statistics = this.state.complex.statistics || {};
-    const description = this.state.complex.description;
+    const fullDescription = this.state.complex.fullDescription;
     const amenities = this.state.complex.amenities || {};
 
     return (
@@ -57,13 +57,20 @@ class Complex extends Component {
           />
           <Photos images={this.state.complex.images} caption={this.state.complex.name} />
           <Summary
-            offers={statistics.propertiesCount}
+            propertiesCount={statistics.propertiesCount}
             architect={details.architect}
             developer={details.developer}
           />
           <Special complex={this.state.complex} />
-          <Description>{description}</Description>
-          <Infrastructure complex={amenities} />
+          {fullDescription &&
+            <div>
+              <Description>{fullDescription}</Description>
+            </div>}
+          {amenities.length > 0 &&
+            <div>
+              <Infrastructure complex={amenities} />
+            </div>
+          }
           <Offers>
             <Grid>
               <Title>
@@ -94,7 +101,7 @@ class Complex extends Component {
               </Row>
             </Grid>
           </Offers>
-          <Guide locality={location.subLocalityName} />
+          <Guide subLocalityName={location.subLocalityName} />
           <Maps />
         </div>
       </BodyClassName>

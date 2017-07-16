@@ -42,18 +42,18 @@ export default function (props) {
       <Grid>
         <Row>
           <Col xs={6}>
-            <Location>{props.locality}</Location>
+            <Location>{props.subLocalityName}</Location>
             <Title>
               Исторический центр Москвы в двух километрах&nbsp;от Кремля
             </Title>
-            <LinkGuide to="/">Гид по {props.locality} →</LinkGuide>
+            <LinkGuide to="/">Гид по {props.subLocalityName} →</LinkGuide>
           </Col>
           <Col xs={6}>
             <ImageGuide
               src={`${process.env.PUBLIC_URL}/img/polyanka-photo.png`}
               src2x={`${process.env.PUBLIC_URL}/img/polyanka-photo.png`}
               src3x={`${process.env.PUBLIC_URL}/img/polyanka-photo.png`}
-              alt="{props.locality}"
+              alt={props.subLocalityName}
             />
           </Col>
         </Row>

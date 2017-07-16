@@ -17,25 +17,22 @@ const Paragraph = styled.div`
 `;
 
 export default function (props) {
-  if (props.children) {
-    return (
-      <Wrapper>
-        <Grid>
-          <Row>
-            <Col xs={2}>
-              <Title>Описание</Title>
-            </Col>
-            <Col xs={10}>
-              <article>
-                <Paragraph>
-                  {props.children}
-                </Paragraph>
-              </article>
-            </Col>
-          </Row>
-        </Grid>
-      </Wrapper>
-    );
-  }
-  return null;
+  return (
+    <Wrapper>
+      <Grid>
+        <Row>
+          <Col xs={2}>
+            <Title>Описание</Title>
+          </Col>
+          <Col xs={10}>
+            <article>
+              <Paragraph>
+                {props.children}
+              </Paragraph>
+            </article>
+          </Col>
+        </Row>
+      </Grid>
+    </Wrapper>
+  );
 }

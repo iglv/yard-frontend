@@ -32,26 +32,29 @@ export default props =>
     <Summary>
       <Property>
         <Title>
-          {props.offers}
-          {props.offers &&
-            <Subtitle>предложений</Subtitle>
-          }
+          {props.propertiesCount &&
+            <div>
+              {props.propertiesCount}
+              <Subtitle>предложений</Subtitle>
+            </div>}
         </Title>
       </Property>
       <Property>
         <Title>
-          {props.architect}
           {props.architect &&
-            <Subtitle>архитектор</Subtitle>
-          }
+            <div>
+              {props.architect}
+              <Subtitle>архитектор</Subtitle>
+            </div>}
         </Title>
       </Property>
       <Property>
         <Title>
-          {props.developer}
           {props.developer &&
-            <Subtitle>застройщик</Subtitle>
-          }
+            <div>
+              {props.developer}
+              <Subtitle>застройщик</Subtitle>
+            </div>}
         </Title>
       </Property>
     </Summary>
