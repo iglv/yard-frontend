@@ -68,9 +68,9 @@ export default props =>
   (<Card to={`/complexes/${props.slug}`}>
     <CropImage>
       <ImageComplex
-        src={`https://yard-images.s3.amazonaws.com/${props.image}-1024`}
+        src={`https://yard-images.s3.amazonaws.com/${props.image}-512`}
         src2x={`https://yard-images.s3.amazonaws.com/${props.image}-1024`}
-        src3x={`https://yard-images.s3.amazonaws.com/${props.image}-1024`}
+        src3x={`https://yard-images.s3.amazonaws.com/${props.image}-2048`}
         alt={props.title}
       />
     </CropImage>

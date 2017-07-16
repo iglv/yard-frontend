@@ -12,6 +12,7 @@ import Infrastructure from './Infrastructure';
 import Offer from './Offer';
 import Guide from './Guide';
 import Maps from './Map';
+import { get } from '../get';
 
 const Offers = styled.div`
   padding: 4rem 0;
@@ -34,21 +35,11 @@ class Complex extends Component {
   }
 
   componentDidMount() {
-    const url = `https://yard.moscow/api/v1/complexes/${this.props.match.params.slug}`;
-
-    fetch(url)
-    .then((response) => {
-      if (response.status >= 400) {
-        throw new Error('Bad response from server');
-      }
-      return response.json();
-    })
-    .then((data) => {
-      this.setState({
-        complex: data,
-      });
+    get(`complexes/${this.props.match.params.slug}`).then((complex) => {
+      this.setState({ complex });
     });
   }
+
 
   render() {
     const location = this.state.complex.location || {};

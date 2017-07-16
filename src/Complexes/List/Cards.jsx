@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Card from './Card';
+import { get } from '../get';
 
 const CardsStyled = styled.div`padding-bottom: 3rem;`;
 
@@ -9,36 +10,28 @@ class Cards extends React.Component {
     super(props);
 
     this.state = {
-      items: [],
+      complexes: [],
     };
   }
 
   componentDidMount() {
-    const url = 'https://yard.moscow/api/v1/complexes?filter%5Bstate%5D=public';
-
-    fetch(url)
-    .then((response) => {
-      if (response.status >= 400) {
-        throw new Error('Bad response from server');
-      }
-      return response.json();
-    })
-    .then((data) => {
-      this.setState({ items: data.items });
+    get('complexes?filter[state]=public').then(({ items: complexes }) => {
+      this.setState({ complexes });
     });
   }
 
   render() {
     return (
       <CardsStyled>
-        {this.state.items.map(post =>
-        (<Card
-          slug={post.slug}
-          id={post.id}
-          location={`${post.location.subLocalityName}, ${post.location.street} ${post.location.house}`}
-          title={post.name}
-          image={post.images[0].id}
-        />),
+        {this.state.complexes.map(offer =>
+          (<Card
+            slug={offer.slug}
+            id={offer.id}
+            location={`${offer.location.subLocalityName}, ${offer.location
+              .street} ${offer.location.house}`}
+            title={offer.name}
+            image={offer.images[0].id}
+          />),
         )}
       </CardsStyled>
     );
