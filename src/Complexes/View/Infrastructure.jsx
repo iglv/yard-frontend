@@ -14,22 +14,18 @@ const Title = styled.h2`
   margin: 0;
 `;
 
-export default function (props) {
-  const {
-    amenities = [],
-  } = props.complex || [];
-  return (
-    <Grid>
-      <Infrastructure>
-        <Title>Инфраструктура</Title>
-        <Row>
-          {amenities.map(amenity =>
-            (<Col lg={2}>
-              <p>{amenity}</p>
-            </Col>),
-          )}
-        </Row>
-      </Infrastructure>
-    </Grid>
-  );
-}
+export default ({ amenities = [] }) =>
+  (<Grid>
+    <Infrastructure>
+      <Title>Инфраструктура</Title>
+      <Row>
+        {amenities.map(amenity =>
+          (<Col lg={2}>
+            <p>
+              {amenity}
+            </p>
+          </Col>),
+        )}
+      </Row>
+    </Infrastructure>
+  </Grid>);
