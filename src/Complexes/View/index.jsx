@@ -72,9 +72,7 @@ class Complex extends Component {
               {fullDescription}
             </Description>}
           {amenities.length > 0 &&
-            <div>
-              <Infrastructure complex={amenities} />
-            </div>}
+            <Infrastructure complex={this.state.complex} />}
           <Offers>
             <Grid>
               <Title>
