@@ -30,32 +30,26 @@ const Subtitle = styled.small`
 export default props =>
   (<Grid>
     <Summary>
-      <Property>
-        <Title>
-          {props.propertiesCount &&
-            <div>
-              {props.propertiesCount}
-              <Subtitle>предложений</Subtitle>
-            </div>}
-        </Title>
-      </Property>
-      <Property>
-        <Title>
-          {props.architect &&
-            <div>
-              {props.architect}
-              <Subtitle>архитектор</Subtitle>
-            </div>}
-        </Title>
-      </Property>
-      <Property>
-        <Title>
-          {props.developer &&
-            <div>
-              {props.developer}
-              <Subtitle>застройщик</Subtitle>
-            </div>}
-        </Title>
-      </Property>
+      {props.propertiesCount &&
+        <Property>
+          <Title>
+            {props.propertiesCount}
+            <Subtitle>предложений</Subtitle>
+          </Title>
+        </Property>}
+      {props.architect &&
+        <Property>
+          <Title>
+            {props.architect}
+            <Subtitle>архитектор</Subtitle>
+          </Title>
+        </Property>}
+      {props.developer &&
+        <Property>
+          <Title>
+            {props.developer}
+            <Subtitle>застройщик</Subtitle>
+          </Title>
+        </Property>}
     </Summary>
   </Grid>);

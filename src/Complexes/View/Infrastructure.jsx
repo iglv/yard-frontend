@@ -15,7 +15,9 @@ const Title = styled.h2`
 `;
 
 export default function (props) {
-  const amenities = props.complex.amenities || [];
+  const {
+    amenities = [],
+  } = props.complex || [];
   return (
     <Grid>
       <Infrastructure>

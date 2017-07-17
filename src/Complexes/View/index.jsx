@@ -40,7 +40,6 @@ class Complex extends Component {
     });
   }
 
-
   render() {
     const {
       fullDescription,
@@ -48,7 +47,8 @@ class Complex extends Component {
       details = {},
       statistics = {},
       amenities = {},
-    } = this.state.complex || {};
+    } =
+      this.state.complex || {};
 
     return (
       <BodyClassName className="bg-white">
@@ -57,7 +57,10 @@ class Complex extends Component {
             title={this.state.complex.name}
             address={`${location.localityName}, ${location.subLocalityName}, ${location.street} ${location.house}, ${location.postalCode}`}
           />
-          <Photos images={this.state.complex.images} caption={this.state.complex.name} />
+          <Photos
+            images={this.state.complex.images}
+            caption={this.state.complex.name}
+          />
           <Summary
             propertiesCount={statistics.propertiesCount}
             architect={details.architect}
@@ -65,18 +68,17 @@ class Complex extends Component {
           />
           <Special complex={this.state.complex} />
           {fullDescription &&
-            <div>
-              <Description>{fullDescription}</Description>
-            </div>}
+            <Description>
+              {fullDescription}
+            </Description>}
           {amenities.length > 0 &&
             <div>
               <Infrastructure complex={amenities} />
-            </div>
-          }
+            </div>}
           <Offers>
             <Grid>
               <Title>
-                  Предложения в {this.state.complex.name}
+                Предложения в {this.state.complex.name}
               </Title>
               <Row>
                 <Col xs={4}>

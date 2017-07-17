@@ -131,7 +131,7 @@ export default function (props) {
 
               <Name>Наземная парковка</Name>
               <Data>
-                {details.parking === undefined && 'Нет'}
+                {(details.parking === undefined) && 'Нет'}
                 {details.parking > 0 && `${details.parking} м/м`}
               </Data>
 
