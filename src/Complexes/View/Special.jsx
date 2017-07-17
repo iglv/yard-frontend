@@ -34,26 +34,35 @@ const Data = styled.dd`
   font-weight: 500;
 `;
 
+function formatNum(num) {
+  if (num) {
+    return Math.floor(num).toFixed(2);
+  }
+  return null;
+}
+
+function checkParking(parkingData) {
+  if (parkingData) {
+    return `${parkingData} м/м`;
+  }
+  return 'Нет';
+}
+
 export default function (props) {
   const {
     details = {},
     details: {
-      ceilHeight: {
-        from: ceilHeightFrom,
-        to: ceilHeightTo,
-      } = {},
+      ceilHeight: { from: ceilHeightFrom, to: ceilHeightTo } = {},
     } = {},
     statistics: {
-      price: {
-        from: { rub: priceFrom } = {},
-        to: { rub: priceTo } = {},
-      } = {},
+      price: { from: { rub: priceFrom } = {}, to: { rub: priceTo } = {} } = {},
       totalPrimaryArea: {
         from: totalPrimaryAreaFrom,
         to: totalPrimaryAreaTo,
       } = {},
     } = {},
-  } = props.complex || {};
+  } =
+    props.complex || {};
 
   return (
     <Grid>
@@ -99,14 +108,14 @@ export default function (props) {
 
               <Name>Площадь</Name>
               <Data>
-                От {Math.floor(totalPrimaryAreaFrom).toFixed(1)} до&nbsp;
-                {Math.floor(totalPrimaryAreaTo).toFixed(1)} м²
+                От {formatNum(totalPrimaryAreaFrom)} до&nbsp;
+                {formatNum(totalPrimaryAreaTo)} м²
               </Data>
 
               <Name>Высота потолков</Name>
               <Data>
-                {Math.floor(ceilHeightFrom).toFixed(2)} -&nbsp;
-                {Math.floor(ceilHeightTo).toFixed(2)} м
+                {formatNum(ceilHeightFrom)} -&nbsp;
+                {formatNum(ceilHeightTo)} м
               </Data>
 
               <Name>Обслуживание</Name>
@@ -131,15 +140,12 @@ export default function (props) {
 
               <Name>Наземная парковка</Name>
               <Data>
-                {(details.parking === undefined) && 'Нет'}
-                {details.parking > 0 && `${details.parking} м/м`}
+                {checkParking(details.parking)}
               </Data>
 
               <Name>Подземная парковка</Name>
               <Data>
-                {details.undergroundGarages === undefined && 'Нет'}
-                {details.undergroundGarages > 0 &&
-                  `${details.undergroundGarages} м/м`}
+                {checkParking(details.undergroundGarages)}
               </Data>
             </Wrap>
           </Col>
