@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import Image from '../Image';
 
 const Card = styled(Link)`
   display: flex;
@@ -32,6 +33,7 @@ const Location = styled.p`
   padding-bottom: 1.5rem;
   text-transform: uppercase;
   color: #646971;
+  margin: 0;
 `;
 
 const Title = styled.h3`
@@ -48,15 +50,30 @@ const Description = styled.p`
   margin: 0;
 `;
 
+const ImageComplex = styled(Image)`
+  max-height: 352px;
+  border: none;
+  margin: 0;
+  padding: 0;
+`;
+
+const CropImage = styled.div`
+    display: inline-block;
+    width: 491px;
+    height: 352px;
+    overflow: hidden;
+`;
+
 export default props =>
-  (<Card to="/сomplex">
-    <div>
-      <img
-        src="img/cards/bitmap.png"
-        srcSet="img/cards/bitmap@2x.png 2x, img/cards/bitmap@3x.png 3x"
-        alt="Img"
+  (<Card to={`/complexes/${props.slug}`}>
+    <CropImage>
+      <ImageComplex
+        src={`https://yard-images.s3.amazonaws.com/${props.image}-512`}
+        src2x={`https://yard-images.s3.amazonaws.com/${props.image}-1024`}
+        src3x={`https://yard-images.s3.amazonaws.com/${props.image}-2048`}
+        alt={props.title}
       />
-    </div>
+    </CropImage>
     <Info>
       <Location>
         {props.location}

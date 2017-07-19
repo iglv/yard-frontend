@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import BodyClassName from 'react-body-classname';
 import styled from 'styled-components';
 import { Grid, Row, Col } from 'react-flexbox-grid';
@@ -12,6 +12,7 @@ import Infrastructure from './Infrastructure';
 import Offer from './Offer';
 import Guide from './Guide';
 import Maps from './Map';
+import { get } from '../get';
 
 const Offers = styled.div`
   padding: 4rem 0;
@@ -25,55 +26,89 @@ const Title = styled.h2`
   padding-bottom: 1.5rem;
 `;
 
-const complexName = 'Жилой комплекс «Полянка/44»';
+class Complex extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      complex: {},
+    };
+  }
 
-export default() =>
-  (<BodyClassName className="bg-white">
-    <div>
-      <Info
-        title={complexName}
-        address="Район Якиманка, улица Большая Полянка, дом 44 • 119180"
-      />
-      <Photos />
-      <Summary
-        offers={950}
-        architect="John McAslan + Partners"
-        developer="Группа «ПСН»"
-      />
-      <Special />
-      <Description />
-      <Infrastructure />
-      <Offers>
-        <Grid>
-          <Title>
-            Предложения {complexName}
-          </Title>
-          <Row>
-            <Col xs={4}>
-              <Offer
-                title="1-комнатные квартиры"
-                space={{ min: 59, max: 120 }}
-                price={{ min: 20.3, max: 84.2 }}
-              />
-            </Col>
-            <Col xs={4}>
-              <Offer
-                title="2-комнатные квартиры"
-                space={{ min: 59, max: 120 }}
-                price={{ min: 20.3, max: 84.2 }}
-              />
-            </Col>
-            <Col xs={4}>
-              <Offer
-                title="3-комнатные квартиры"
-                space={{ min: 59, max: 120 }}
-                price={{ min: 20.3, max: 84.2 }}
-              />
-            </Col>
-          </Row>
-        </Grid>
-      </Offers>
-      <Guide />
-      <Maps />
-    </div>
-  </BodyClassName>);
+  componentDidMount() {
+    get(`complexes/${this.props.match.params.slug}`).then((complex) => {
+      this.setState({ complex });
+    });
+  }
+
+  render() {
+    const {
+      fullDescription,
+      location = {},
+      details = {},
+      statistics = {},
+      amenities = {},
+    } =
+      this.state.complex || {};
+
+    return (
+      <BodyClassName className="bg-white">
+        <div>
+          <Info
+            title={this.state.complex.name}
+            address={`${location.localityName}, ${location.subLocalityName}, ${location.street} ${location.house}, ${location.postalCode}`}
+          />
+          <Photos
+            images={this.state.complex.images}
+            caption={this.state.complex.name}
+          />
+          <Summary
+            propertiesCount={statistics.propertiesCount}
+            architect={details.architect}
+            developer={details.developer}
+          />
+          <Special complex={this.state.complex} />
+          {fullDescription &&
+            <Description>
+              {fullDescription}
+            </Description>}
+          {amenities.length > 0 &&
+            <Infrastructure amenities={amenities} />}
+          <Offers>
+            <Grid>
+              <Title>
+                Предложения в {this.state.complex.name}
+              </Title>
+              <Row>
+                <Col xs={4}>
+                  <Offer
+                    title="1-комнатные квартиры"
+                    space={{ min: 59, max: 120 }}
+                    price={{ min: 20.3, max: 84.2 }}
+                  />
+                </Col>
+                <Col xs={4}>
+                  <Offer
+                    title="2-комнатные квартиры"
+                    space={{ min: 59, max: 120 }}
+                    price={{ min: 20.3, max: 84.2 }}
+                  />
+                </Col>
+                <Col xs={4}>
+                  <Offer
+                    title="3-комнатные квартиры"
+                    space={{ min: 59, max: 120 }}
+                    price={{ min: 20.3, max: 84.2 }}
+                  />
+                </Col>
+              </Row>
+            </Grid>
+          </Offers>
+          <Guide subLocalityName={location.subLocalityName} />
+          <Maps />
+        </div>
+      </BodyClassName>
+    );
+  }
+}
+
+export default Complex;

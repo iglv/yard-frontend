@@ -6,7 +6,7 @@ import { Grid } from 'react-flexbox-grid';
 const Info = styled.div`
   display: flex;
   justify-content: space-between;
-  padding-top: 1.5rem;
+  padding-top: 1.3rem;
 `;
 
 const Title = styled.h1`
@@ -21,7 +21,6 @@ const Desc = styled.p`
   line-height: 1.57;
   margin: 0;
   padding-top: .5rem;
-  padding-bottom: 1rem;
   color: #a9afb6;
 `;
 

@@ -1,8 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Grid, Row, Col } from 'react-flexbox-grid';
+import { securityKinds, constructionKinds, quarters } from './Dictionaries';
 
-const Special = styled.div`padding-top: 2rem;`;
+const Special = styled.div`padding: 2rem 0;`;
 
 const Title = styled.h2`
   font-family: 'Philosopher';
@@ -15,6 +16,7 @@ const Wrap = styled.dl`
   display: flex;
   flex-wrap: wrap;
   width: 100%;
+  margin: 0;
 `;
 
 const Name = styled.dt`
@@ -29,59 +31,126 @@ const Data = styled.dd`
   width: 50%;
   margin: 0;
   padding-bottom: .9rem;
+  font-weight: 500;
 `;
 
-export default () => (
-  <Grid>
-    <Special>
-      <Title>Характеристики</Title>
-      <Row>
-        <Col xs={4}>
-          <Wrap>
-            <Name>Количество квартир</Name>
-            <Data>1 503</Data>
+function formatNum(num) {
+  if (num) {
+    return Math.floor(num).toFixed(2);
+  }
+  return null;
+}
 
-            <Name>Статус</Name>
-            <Data>Квартиры</Data>
+function checkParking(parkingData) {
+  if (parkingData) {
+    return `${parkingData} м/м`;
+  }
+  return 'Нет';
+}
 
-            <Name>Цены</Name>
-            <Data>от 5.3 до 143.5 млн</Data>
+export default function (props) {
+  const {
+    details = {},
+    details: {
+      ceilHeight: { from: ceilHeightFrom, to: ceilHeightTo } = {},
+    } = {},
+    statistics: {
+      price: { from: { rub: priceFrom } = {}, to: { rub: priceTo } = {} } = {},
+      totalPrimaryArea: {
+        from: totalPrimaryAreaFrom,
+        to: totalPrimaryAreaTo,
+      } = {},
+    } = {},
+  } =
+    props.complex || {};
 
-            <Name>Безопасность</Name>
-            <Data>Охраняемая территория</Data>
-          </Wrap>
-        </Col>
-        <Col xs={4}>
-          <Wrap>
-            <Name>Конструкция корпусов</Name>
-            <Data>монолит</Data>
+  return (
+    <Grid>
+      <Special>
+        <Title>Характеристики</Title>
+        <Row>
+          <Col xs={4}>
+            <Wrap>
+              {details.units &&
+                <div>
+                  <Name>Количество квартир</Name>
+                  <Data>
+                    {details.units}
+                  </Data>
+                </div>}
 
-            <Name>Площадь</Name>
-            <Data>от 50 до 154 м²</Data>
+              {details.status &&
+                <div>
+                  <Name>Статус</Name>
+                  <Data>
+                    {details.status}
+                  </Data>
+                </div>}
 
-            <Name>Высота потолков</Name>
-            <Data>3.45 − 5 м</Data>
+              <Name>Цены</Name>
+              <Data>
+                От {Math.floor(priceFrom / 10000) / 100} до&nbsp;
+                {Math.floor(priceTo / 10000) / 100} млн
+              </Data>
 
-            <Name>Обслуживание</Name>
-            <Data>1 200 руб / м² / месяц</Data>
-          </Wrap>
-        </Col>
-        <Col xs={4}>
-          <Wrap>
-            <Name>Начало строительства</Name>
-            <Data>I квартал 2012 года</Data>
+              <Name>Безопасность</Name>
+              <Data>
+                {securityKinds[details.security]}
+              </Data>
+            </Wrap>
+          </Col>
+          <Col xs={4}>
+            <Wrap>
+              <Name>Конструкция корпусов</Name>
+              <Data>
+                {constructionKinds[details.constructionKind]}
+              </Data>
 
-            <Name>Конец строительства</Name>
-            <Data>IV квартал 2018 года</Data>
+              <Name>Площадь</Name>
+              <Data>
+                От {formatNum(totalPrimaryAreaFrom)} до&nbsp;
+                {formatNum(totalPrimaryAreaTo)} м²
+              </Data>
 
-            <Name>Наземная парковка</Name>
-            <Data>1 500 м/м</Data>
+              <Name>Высота потолков</Name>
+              <Data>
+                {formatNum(ceilHeightFrom)} -&nbsp;
+                {formatNum(ceilHeightTo)} м
+              </Data>
 
-            <Name>Подземная парковка</Name>
-            <Data>Нет</Data>
-          </Wrap>
-        </Col>
-      </Row>
-    </Special>
-  </Grid>
+              <Name>Обслуживание</Name>
+              <Data>
+                {details.maintenanceCosts} руб / м² / месяц
+              </Data>
+            </Wrap>
+          </Col>
+          <Col xs={4}>
+            <Wrap>
+              <Name>Начало строительства</Name>
+              <Data>
+                {quarters[details.startQuarter]} квартал&nbsp;
+                {details.startYear} года
+              </Data>
+
+              <Name>Конец строительства</Name>
+              <Data>
+                {quarters[details.commissioningQuarter]} квартал&nbsp;
+                {details.commissioningYear} года
+              </Data>
+
+              <Name>Наземная парковка</Name>
+              <Data>
+                {checkParking(details.parking)}
+              </Data>
+
+              <Name>Подземная парковка</Name>
+              <Data>
+                {checkParking(details.undergroundGarages)}
+              </Data>
+            </Wrap>
+          </Col>
+        </Row>
+      </Special>
+    </Grid>
   );
+}

@@ -3,10 +3,14 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { Grid } from 'react-flexbox-grid';
 
+const Section = styled.section`
+  overflow: hidden;
+  overflow-x: scroll;
+`;
 const PhotosWrap = styled.div`
   display: flex;
-  justify-content: space-between;
-  padding-top: 1.5rem;
+  justify-content: flex-start;
+  padding-top: 1rem;
 `;
 const LinkTotal = styled(Link)`
   font-size: .6rem;
@@ -18,44 +22,24 @@ const LinkTotal = styled(Link)`
   text-decoration: none;
   color: white;
   background-color: #00779a;
+  overflow: hidden;
 `;
 
-const images = [
-  {
-    url: 'img/photos/1.jpg',
-    caption: 'Фасад',
-  },
-  {
-    url: 'img/photos/2.jpg',
-    caption: 'Вид сверху',
-  },
-  {
-    url: 'img/photos/4.jpg',
-    caption: 'Вид сверху',
-  },
-  {
-    url: 'img/photos/3.jpg',
-    caption: 'Вид сзади',
-  },
-  {
-    url: 'img/photos/2.jpg',
-    caption: 'Вид охуенный',
-  },
-  {
-    url: 'img/photos/1.jpg',
-    caption: 'Вид просто',
-  },
-];
-
-export default () => (
-  <div>
-    <PhotosWrap>
-      {images.map(({ url, caption }) => <img src={url} alt={caption} />)}
-    </PhotosWrap>
-    <Grid>
-      <LinkTotal to="/">
-        {images.length} фотография
-      </LinkTotal>
-    </Grid>
-  </div>
-  );
+export default function (props) {
+  const images = props.images;
+  if (props.images) {
+    return (
+      <Section>
+        <PhotosWrap>
+          {images.map(({ id }) => <img src={`https://yard-images.s3.amazonaws.com/${id}-512`} alt={props.caption} height={400} />)}
+        </PhotosWrap>
+        <Grid>
+          <LinkTotal to="/">
+            {images.length} фото
+          </LinkTotal>
+        </Grid>
+      </Section>
+    );
+  }
+  return null;
+}

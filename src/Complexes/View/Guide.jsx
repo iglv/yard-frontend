@@ -36,23 +36,28 @@ const ImageGuide = styled(Image)`
   height: 560px;
 `;
 
-export default() =>
-  (<Guide>
-    <Grid>
-      <Row>
-        <Col xs={6}>
-          <Location>Якиманка</Location>
-          <Title>
-            Исторический центр Москвы в двух километрах&nbsp;от Кремля
-          </Title>
-          <LinkGuide to="/">Гид по Якиманке →</LinkGuide>
-        </Col>
-        <Col xs={6}>
-          <ImageGuide
-            src={`${process.env.PUBLIC_URL}/img/polyanka-photo.png`}
-            alt="Полянка"
-          />
-        </Col>
-      </Row>
-    </Grid>
-  </Guide>);
+export default function (props) {
+  return (
+    <Guide>
+      <Grid>
+        <Row>
+          <Col xs={6}>
+            <Location>{props.subLocalityName}</Location>
+            <Title>
+              Исторический центр Москвы в двух километрах&nbsp;от Кремля
+            </Title>
+            <LinkGuide to="/">Гид по {props.subLocalityName} →</LinkGuide>
+          </Col>
+          <Col xs={6}>
+            <ImageGuide
+              src={`${process.env.PUBLIC_URL}/img/polyanka-photo.png`}
+              src2x={`${process.env.PUBLIC_URL}/img/polyanka-photo.png`}
+              src3x={`${process.env.PUBLIC_URL}/img/polyanka-photo.png`}
+              alt={props.subLocalityName}
+            />
+          </Col>
+        </Row>
+      </Grid>
+    </Guide>
+  );
+}
