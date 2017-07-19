@@ -10,7 +10,7 @@ Used:
 ## Installation
 
 Clone this repository. 
-Install [![Yarn](https://yarnpkg.com/)] and run in terminal. 
+Install [Yarn](https://yarnpkg.com/) and run in terminal. 
 
 ```shell
 yarn install
